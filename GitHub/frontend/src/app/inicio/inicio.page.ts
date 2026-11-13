@@ -1,89 +1,88 @@
-import { Component, type OnInit, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import {
-  IonAccordion,
-  IonAccordionGroup,
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
   IonContent,
   IonHeader,
   IonItem,
   IonLabel,
-  IonNote,
-  IonSegment,
-  IonSegmentButton,
+  IonList,
   IonTitle,
   IonToolbar,
+  type ViewWillEnter,
 } from '@ionic/angular';
 
-import { DatabaseService } from '../core/db/database.service';
-import { type Nivel, PerfilService } from '../core/perfil.service';
+import { DIAS_SEMANA, type RutinaResumen, RutinasService } from '../core/rutinas.service';
+import { SesionesService } from '../core/sesiones.service';
 
-interface EjercicioFila {
-  patron_id: string;
-  patron: string;
-  descripcion_simple: string | null;
-  ejercicio: string | null;
-  musculo: string | null;
-}
-
-interface PatronConEjercicios {
-  id: string;
-  nombre: string;
-  descripcion: string | null;
-  ejercicios: { nombre: string; musculo: string | null }[];
-}
-
-/**
- * Pantalla de inicio provisional: muestra el catálogo agrupado por patrón articular,
- * leído de la base SQLite del teléfono. Aquí irán las rutinas en el siguiente paso.
- */
+/** Inicio: rutinas del usuario, la de hoy primero, y la sesión en curso si la hay. */
 @Component({
   selector: 'app-inicio',
   templateUrl: 'inicio.page.html',
   styleUrls: ['inicio.page.scss'],
   imports: [
+    RouterLink,
     IonHeader,
     IonToolbar,
     IonTitle,
     IonContent,
-    IonSegment,
-    IonSegmentButton,
-    IonLabel,
-    IonAccordionGroup,
-    IonAccordion,
+    IonButton,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonList,
     IonItem,
-    IonNote,
+    IonLabel,
   ],
 })
-export class InicioPage implements OnInit {
-  private readonly db = inject(DatabaseService);
-  readonly perfil = inject(PerfilService).perfil;
-  private readonly perfilService = inject(PerfilService);
+export class InicioPage implements ViewWillEnter {
+  private readonly rutinasService = inject(RutinasService);
+  private readonly sesiones = inject(SesionesService);
+  private readonly router = inject(Router);
 
-  readonly patrones = signal<PatronConEjercicios[]>([]);
-  readonly totalEjercicios = signal(0);
+  readonly rutinas = signal<RutinaResumen[]>([]);
+  readonly enCurso = signal<{ id: string; rutina: string | null; inicio: string } | null>(null);
+  readonly cargado = signal(false);
+  readonly iniciando = signal(false);
 
-  async ngOnInit(): Promise<void> {
-    const filas = await this.db.consultar<EjercicioFila>(
-      `SELECT p.id AS patron_id, p.nombre AS patron, p.descripcion_simple,
-              e.nombre AS ejercicio, m.nombre AS musculo
-         FROM patron_articular p
-         LEFT JOIN ejercicio e ON e.patron_articular_id = p.id AND e.deleted_at IS NULL
-         LEFT JOIN musculo m   ON m.id = e.musculo_id
-        ORDER BY p.orden, e.nombre`,
-    );
-    const porPatron = new Map<string, PatronConEjercicios>();
-    for (const f of filas) {
-      let p = porPatron.get(f.patron_id);
-      if (!p) {
-        p = { id: f.patron_id, nombre: f.patron, descripcion: f.descripcion_simple, ejercicios: [] };
-        porPatron.set(f.patron_id, p);
-      }
-      if (f.ejercicio) p.ejercicios.push({ nombre: f.ejercicio, musculo: f.musculo });
-    }
-    this.patrones.set([...porPatron.values()]);
-    this.totalEjercicios.set(filas.filter((f) => f.ejercicio).length);
+  /** 1 = lunes … 7 = domingo, como en la base de datos. */
+  readonly hoy = ((new Date().getDay() + 6) % 7) + 1;
+  readonly dias = DIAS_SEMANA;
+
+  async ionViewWillEnter(): Promise<void> {
+    const [rutinas, enCurso] = await Promise.all([this.rutinasService.listar(), this.sesiones.enCurso()]);
+    this.rutinas.set(rutinas);
+    this.enCurso.set(enCurso);
+    this.cargado.set(true);
   }
 
-  cambiarNivel(valor: unknown): void {
-    if (valor) void this.perfilService.cambiarNivel(valor as Nivel);
+  rutinaDeHoy(): RutinaResumen | undefined {
+    return this.rutinas().find((r) => r.dia_semana === this.hoy);
+  }
+
+  async empezar(rutinaId: string | null): Promise<void> {
+    if (this.iniciando()) return;
+    this.iniciando.set(true);
+    try {
+      const id = await this.sesiones.iniciar(rutinaId);
+      await this.router.navigate(['/sesion', id]);
+    } finally {
+      this.iniciando.set(false);
+    }
+  }
+
+  haceCuanto(fecha: string | null): string {
+    if (!fecha) return 'Sin registros todavía';
+    const dias = Math.floor((Date.now() - new Date(fecha).getTime()) / 86_400_000);
+    if (dias <= 0) return 'Última vez: hoy';
+    if (dias === 1) return 'Última vez: ayer';
+    return `Última vez: hace ${dias} días`;
   }
 }

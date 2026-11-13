@@ -1,0 +1,24 @@
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    margin: 16px 0 4px;
+  }
+}
+
+.vacio {
+  color: var(--ion-color-medium);
+}
+
+.series {
+  display: flex;
+  align-items: center;
+
+  span {
+    min-width: 64px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}

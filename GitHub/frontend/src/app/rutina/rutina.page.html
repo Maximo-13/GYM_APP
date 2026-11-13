@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ nueva() ? 'Nueva rutina' : 'Editar rutina' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button strong [disabled]="!puedeGuardar()" (click)="guardar()">Guardar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full" class="datos">
+    <ion-item>
+      <ion-input
+        label="Nombre"
+        labelPlacement="stacked"
+        placeholder="Ej.: Pierna A"
+        maxlength="100"
+        [ngModel]="nombre()"
+        (ngModelChange)="nombre.set($event ?? '')"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Día" interface="popover" [ngModel]="dia()" (ngModelChange)="dia.set($event)">
+        <ion-select-option [value]="null">Sin día fijo</ion-select-option>
+        @for (d of dias; track d; let i = $index) {
+        <ion-select-option [value]="i + 1">{{ d }}</ion-select-option>
+        }
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div class="titulo-seccion ion-padding-horizontal">
+    <h2>Ejercicios</h2>
+    <ion-button fill="clear" size="small" (click)="selectorAbierto.set(true)">+ Añadir</ion-button>
+  </div>
+
+  @if (ejercicios().length === 0) {
+  <p class="vacio ion-padding-horizontal">Añade los ejercicios en el orden en que los haces.</p>
+  }
+
+  <ion-list lines="full">
+    <ion-reorder-group [disabled]="false" (ionReorderEnd)="reordenar($any($event))">
+      @for (e of ejercicios(); track $index; let i = $index) {
+      <ion-item>
+        <ion-reorder slot="start"></ion-reorder>
+        <ion-label>
+          <h3>{{ e.nombre }}</h3>
+          <p>{{ e.patron }}</p>
+        </ion-label>
+        <div slot="end" class="series" aria-label="Series objetivo">
+          <ion-button fill="clear" size="small" aria-label="Una serie menos" (click)="cambiarSeries(i, -1)"
+            >−</ion-button
+          >
+          <span>{{ e.series_objetivo }} series</span>
+          <ion-button fill="clear" size="small" aria-label="Una serie más" (click)="cambiarSeries(i, 1)">+</ion-button>
+        </div>
+        <ion-button slot="end" fill="clear" color="medium" aria-label="Quitar ejercicio" (click)="quitar(i)"
+          >✕</ion-button
+        >
+      </ion-item>
+      }
+    </ion-reorder-group>
+  </ion-list>
+
+  @if (!nueva()) {
+  <div class="ion-padding">
+    <ion-button expand="block" fill="clear" color="danger" (click)="eliminar()">Eliminar rutina</ion-button>
+  </div>
+  }
+
+  <ion-modal [isOpen]="selectorAbierto()" (didDismiss)="selectorAbierto.set(false)">
+    <ng-template>
+      <app-selector-ejercicios
+        (elegir)="agregar($event)"
+        (cancelar)="selectorAbierto.set(false)"
+      ></app-selector-ejercicios>
+    </ng-template>
+  </ion-modal>
+</ion-content>

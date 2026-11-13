@@ -43,10 +43,14 @@ npm run catalogo
 - Base de datos del servidor: MySQL con JPA + Flyway (migraciones V1 a V4).
 - Base SQLite en la app, con el mismo catálogo e IDs que el servidor.
 - Pantalla de bienvenida para elegir el nivel (RF-02).
+- Rutinas con ejercicios en orden, día y series objetivo (RF-08).
+- Registro de series con peso, reps, RIR y check, editando la sesión en vivo (RF-09, RF-11, RF-13).
+- Comparativa con la última vez: serie anterior, meta, Superado / Mantenido / Por debajo por 1RM estimado y barra de volumen (RF-14 a RF-17).
+- Acción articular la primera vez que se registra cada ejercicio, según el nivel (RF-06).
 
 ## Pendiente
 
-- Rutinas (RF-08) y registro de sesiones y series (RF-09, RF-11, RF-13).
-- Comparativa en vivo con la semana pasada (RF-14 a RF-16).
+- Temporizador de descanso (RF-12), historial y gráficas (RF-18), columnas personalizadas (RF-10).
+- Importar y exportar Excel (RF-27, RF-28).
 - Cuenta y login (RF-01) y sincronización con el servidor.
 - Textos en archivos de idioma (RNF-13).

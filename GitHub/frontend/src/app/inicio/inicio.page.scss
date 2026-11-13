@@ -1,34 +1,32 @@
-.nivel p,
-.resumen {
-  margin: 0 0 8px;
+ion-card {
+  margin: 0 0 16px;
+}
+
+.en-curso {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+
+  ion-card-title,
+  ion-card-subtitle {
+    color: var(--ion-color-primary-contrast);
+  }
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    margin: 8px 0;
+  }
+}
+
+.vacio {
+  padding: 16px 0;
   color: var(--ion-color-medium);
-  font-size: 0.9rem;
 }
 
-h2 {
-  margin: 24px 0 4px;
-}
-
-.contenido {
-  padding: 4px 16px 12px;
-}
-
-.descripcion {
-  margin: 0 0 8px;
-  color: var(--ion-color-medium);
-}
-
-ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
-li {
-  padding: 3px 0;
-}
-
-.musculo {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--ion-color-medium);
+.extras {
+  margin-top: 24px;
 }

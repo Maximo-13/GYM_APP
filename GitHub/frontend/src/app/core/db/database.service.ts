@@ -62,6 +62,7 @@ export class DatabaseService {
   }
 
   private async abrir(): Promise<void> {
+    const t0 = performance.now();
     if (this.esWeb) await this.prepararWeb();
 
     const consistente = (await this.sqlite.checkConnectionsConsistency()).result;
@@ -76,6 +77,7 @@ export class DatabaseService {
     await this.migrar();
     await this.actualizarCatalogo();
     await this.guardarWeb();
+    console.debug(`[BD] abierta en ${Math.round(performance.now() - t0)} ms`);
   }
 
   /** En el navegador, el plugin necesita el componente <jeep-sqlite> (sql.js + IndexedDB). */

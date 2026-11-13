@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancelar.emit()">Cancelar</ion-button>
+    </ion-buttons>
+    <ion-title>Ejercicios</ion-title>
+    <ion-buttons slot="end">
+      <ion-button strong [disabled]="seleccion().length === 0" (click)="elegir.emit(seleccion())">
+        Añadir
+        @if (seleccion().length) {
+          ({{ seleccion().length }})
+        }
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+      placeholder="Buscar por nombre, músculo o patrón"
+      [debounce]="150"
+      (ionInput)="busqueda.set($event.detail.value ?? '')"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    @for (g of grupos(); track g.patron) {
+      <ion-item-divider sticky>
+        <ion-label>{{ g.patron }}</ion-label>
+      </ion-item-divider>
+      @for (e of g.ejercicios; track e.id) {
+        <ion-item button [detail]="false" (click)="alternar(e)">
+          <ion-checkbox slot="start" [checked]="estaElegido(e)" aria-hidden="true"></ion-checkbox>
+          <ion-label>
+            {{ e.nombre }}
+            <p>
+              {{ e.musculo }}
+              @if (e.equipo) {
+                · {{ e.equipo }}
+              }
+            </p>
+          </ion-label>
+        </ion-item>
+      }
+    } @empty {
+      <ion-item lines="none">
+        <ion-label class="ion-text-wrap">No hay ejercicios con "{{ busqueda() }}".</ion-label>
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>

@@ -1,0 +1,146 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text="Inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ sesion()?.rutina ?? 'Entrenamiento libre' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button strong (click)="terminar()">Terminar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  @if (sesion()?.tonelaje_anterior; as previo) {
+  <ion-toolbar class="volumen">
+    <div class="volumen-texto">
+      <span>Volumen {{ tonelaje() | number: '1.0-0' }} kg</span>
+      <span>la última vez {{ previo | number: '1.0-0' }} kg</span>
+    </div>
+    <ion-progress-bar
+      [value]="tonelaje() / previo"
+      [color]="tonelaje() >= previo ? 'success' : 'primary'"
+    ></ion-progress-bar>
+  </ion-toolbar>
+  }
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (sesion(); as s) { @for (e of s.ejercicios; track e.id; let i = $index; let ultimo = $last) {
+  <section class="ejercicio">
+    <header>
+      <div>
+        <h2>{{ e.nombre }}</h2>
+        <p class="sub">{{ e.musculo }} @if (e.fecha_anterior) { · última vez {{ haceCuanto(e.fecha_anterior) }} }</p>
+      </div>
+      <div class="acciones">
+        <button type="button" aria-label="Subir" [disabled]="i === 0" (click)="mover(i, -1)">↑</button>
+        <button type="button" aria-label="Bajar" [disabled]="ultimo" (click)="mover(i, 1)">↓</button>
+        <button type="button" aria-label="Quitar ejercicio" (click)="quitarEjercicio(e)">✕</button>
+      </div>
+    </header>
+
+    @if (mostrarIntro(e)) {
+    <div class="intro">
+      @if (perfil()?.nivel === 'PRINCIPIANTE') {
+      <p class="intro-titulo">¿Qué movimiento hace este ejercicio?</p>
+      <p>{{ e.patron_simple }}</p>
+      <p class="termino">Se llama <strong>{{ e.patron }}</strong>.</p>
+      } @else {
+      <p class="intro-titulo">Acción principal: {{ e.patron }}</p>
+      <p>{{ e.patron_tecnica }}</p>
+      }
+      <ion-button size="small" fill="outline" (click)="entendido(e)">Entendido</ion-button>
+    </div>
+    }
+
+    <div class="tabla" role="table" [attr.aria-label]="'Series de ' + e.nombre">
+      <div class="fila cabecera" role="row">
+        <span role="columnheader">#</span>
+        <span role="columnheader">Anterior</span>
+        <span role="columnheader">kg</span>
+        <span role="columnheader">Reps</span>
+        <span role="columnheader">RIR</span>
+        <span role="columnheader" class="sr-only">Hecha</span>
+      </div>
+      @for (sr of e.series; track sr.id) { @let previo = anterior(e, sr); @let est = estado(e, sr);
+      <div
+        class="fila"
+        role="row"
+        [class.hecha]="sr.completada"
+        [class.superado]="est === 'SUPERADO'"
+        [class.mantenido]="est === 'MANTENIDO'"
+        [class.debajo]="est === 'POR_DEBAJO'"
+      >
+        <span class="num" role="cell">{{ sr.numero }}</span>
+        <span class="previo" role="cell">
+          @if (previo) { {{ texto(previo) }} @if (est) {
+          <em class="estado">{{ etiquetas[est] }}</em>
+          } @else if (meta(e, sr); as m) {
+          <em class="meta">Meta {{ texto(m) }}</em>
+          } } @else { — }
+        </span>
+        <span role="cell">
+          <input
+            inputmode="decimal"
+            aria-label="Peso en kg"
+            [placeholder]="previo?.peso_kg ?? ''"
+            [value]="sr.peso_kg ?? ''"
+            (change)="cambiarCampo(sr, 'peso_kg', $any($event.target).value)"
+          />
+        </span>
+        <span role="cell">
+          <input
+            inputmode="numeric"
+            aria-label="Repeticiones"
+            [placeholder]="previo?.repeticiones ?? ''"
+            [value]="sr.repeticiones ?? ''"
+            (change)="cambiarCampo(sr, 'repeticiones', $any($event.target).value)"
+          />
+        </span>
+        <span role="cell">
+          <input
+            inputmode="numeric"
+            aria-label="RIR"
+            [value]="sr.rir ?? ''"
+            (change)="cambiarCampo(sr, 'rir', $any($event.target).value)"
+          />
+        </span>
+        <span role="cell">
+          <button
+            type="button"
+            class="check"
+            [attr.aria-pressed]="sr.completada"
+            [attr.aria-label]="sr.completada ? 'Desmarcar serie' : 'Marcar serie como hecha'"
+            (click)="alternarCompletada(e, sr)"
+          >
+            ✓
+          </button>
+        </span>
+      </div>
+      }
+    </div>
+    <div class="pie">
+      <ion-button fill="clear" size="small" (click)="agregarSerie(e)">+ Serie</ion-button>
+      @if (e.series.length > 0) {
+      <ion-button fill="clear" size="small" color="medium" (click)="quitarUltimaSerie(e)">− Última serie</ion-button>
+      }
+    </div>
+  </section>
+  } @empty {
+  <p class="vacio ion-padding">Añade el primer ejercicio para empezar a registrar.</p>
+  }
+
+  <div class="ion-padding final">
+    <ion-button expand="block" fill="outline" (click)="selectorAbierto.set(true)">+ Añadir ejercicio</ion-button>
+    <ion-button expand="block" (click)="terminar()">Terminar entrenamiento</ion-button>
+    <ion-button expand="block" fill="clear" color="danger" (click)="descartar()">Descartar sesión</ion-button>
+  </div>
+  }
+
+  <ion-modal [isOpen]="selectorAbierto()" (didDismiss)="selectorAbierto.set(false)">
+    <ng-template>
+      <app-selector-ejercicios
+        (elegir)="agregarEjercicios($event)"
+        (cancelar)="selectorAbierto.set(false)"
+      ></app-selector-ejercicios>
+    </ng-template>
+  </ion-modal>
+</ion-content>

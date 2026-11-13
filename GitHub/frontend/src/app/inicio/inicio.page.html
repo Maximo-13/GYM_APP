@@ -1,46 +1,64 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Inicio</ion-title>
+    <ion-title>Entrenar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <section class="nivel">
-    <p>Tu nivel</p>
-    <ion-segment [value]="perfil()?.nivel" (ionChange)="cambiarNivel($event.detail.value)">
-      <ion-segment-button value="PRINCIPIANTE"><ion-label>Principiante</ion-label></ion-segment-button>
-      <ion-segment-button value="INTERMEDIO"><ion-label>Intermedio</ion-label></ion-segment-button>
-      <ion-segment-button value="AVANZADO"><ion-label>Avanzado</ion-label></ion-segment-button>
-    </ion-segment>
-  </section>
+  @if (enCurso(); as s) {
+  <ion-card class="en-curso" button [routerLink]="['/sesion', s.id]">
+    <ion-card-header>
+      <ion-card-subtitle>Sesión en curso</ion-card-subtitle>
+      <ion-card-title>{{ s.rutina ?? 'Entrenamiento libre' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>Toca para continuar registrando.</ion-card-content>
+  </ion-card>
+  } @else if (rutinaDeHoy(); as r) {
+  <ion-card class="hoy">
+    <ion-card-header>
+      <ion-card-subtitle>Hoy toca · {{ dias[hoy - 1] }}</ion-card-subtitle>
+      <ion-card-title>{{ r.nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ r.num_ejercicios }} ejercicios · {{ haceCuanto(r.ultima_sesion) }}</p>
+      <ion-button expand="block" [disabled]="iniciando()" (click)="empezar(r.id)">Empezar</ion-button>
+    </ion-card-content>
+  </ion-card>
+  }
 
-  <section>
-    <h2>Patrones articulares</h2>
-    <p class="resumen">{{ patrones().length }} patrones · {{ totalEjercicios() }} ejercicios en el catálogo</p>
+  <div class="titulo-seccion">
+    <h2>Mis rutinas</h2>
+    <ion-button fill="clear" size="small" routerLink="/rutina/nueva">+ Nueva</ion-button>
+  </div>
 
-    <ion-accordion-group>
-      @for (p of patrones(); track p.id) {
-      <ion-accordion [value]="p.id">
-        <ion-item slot="header">
-          <ion-label>{{ p.nombre }}</ion-label>
-          <ion-note slot="end">{{ p.ejercicios.length }}</ion-note>
-        </ion-item>
-        <div slot="content" class="contenido">
-          @if (p.descripcion) {
-          <p class="descripcion">{{ p.descripcion }}</p>
-          }
-          <ul>
-            @for (e of p.ejercicios; track e.nombre) {
-            <li>
-              {{ e.nombre }} @if (e.musculo) {
-              <span class="musculo">{{ e.musculo }}</span>
-              }
-            </li>
-            }
-          </ul>
-        </div>
-      </ion-accordion>
-      }
-    </ion-accordion-group>
-  </section>
+  @if (cargado() && rutinas().length === 0) {
+  <div class="vacio">
+    <p>Todavía no tienes rutinas.</p>
+    <p>Crea tu primera plantilla, por ejemplo "Pierna A", con sus ejercicios en orden.</p>
+    <ion-button routerLink="/rutina/nueva">Crear rutina</ion-button>
+  </div>
+  } @else {
+  <ion-list lines="full">
+    @for (r of rutinas(); track r.id) {
+    <ion-item>
+      <ion-label>
+        <h3>{{ r.nombre }}</h3>
+        <p>
+          @if (r.dia_semana) { {{ dias[r.dia_semana - 1] }} · } {{ r.num_ejercicios }} ejercicios · {{
+          haceCuanto(r.ultima_sesion) }}
+        </p>
+      </ion-label>
+      <ion-button slot="end" fill="clear" [routerLink]="['/rutina', r.id]">Editar</ion-button>
+      <ion-button slot="end" [disabled]="iniciando() || !!enCurso()" (click)="empezar(r.id)">Empezar</ion-button>
+    </ion-item>
+    }
+  </ion-list>
+  }
+
+  <div class="extras">
+    <ion-button fill="outline" expand="block" [disabled]="iniciando() || !!enCurso()" (click)="empezar(null)">
+      Entrenamiento libre
+    </ion-button>
+    <ion-button fill="clear" expand="block" routerLink="/patrones">Patrones articulares y nivel</ion-button>
+  </div>
 </ion-content>
