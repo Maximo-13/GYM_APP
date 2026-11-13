@@ -1,0 +1,17 @@
+# Dependencias y builds
+node_modules/
+target/
+www/
+dist/
+.angular/
+
+# IDEs y sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+.env
+*.env.local
