@@ -1,13 +1,21 @@
 import type { Routes } from '@angular/router';
 
+import { conPerfil, sinPerfil } from './core/perfil.guard';
+
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    path: 'bienvenida',
+    canActivate: [sinPerfil],
+    loadComponent: () => import('./bienvenida/bienvenida.page').then((m) => m.BienvenidaPage),
+  },
+  {
+    path: 'inicio',
+    canActivate: [conPerfil],
+    loadComponent: () => import('./inicio/inicio.page').then((m) => m.InicioPage),
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full',
   },
 ];

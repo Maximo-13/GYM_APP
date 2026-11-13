@@ -1,0 +1,2011 @@
+{
+ "version": 4,
+ "patrones": [
+  {
+   "id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "codigo": "FLEXION_CODO",
+   "nombre": "Flexión de codo",
+   "articulacion": "codo",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Doblas el codo y acercas la mano al hombro.",
+   "descripcion_tecnica": "Disminuye el ángulo del codo. Motor principal: flexores del codo, sobre todo el bíceps braquial, con el braquial y el braquiorradial.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 1
+  },
+  {
+   "id": "e6aa4655-852d-53c3-9aa4-37772d623333",
+   "codigo": "EXTENSION_CODO",
+   "nombre": "Extensión de codo",
+   "articulacion": "codo",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Estiras el brazo y alejas la mano del hombro.",
+   "descripcion_tecnica": "Aumenta el ángulo del codo. Motor principal: tríceps braquial; su cabeza larga también cruza el hombro.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 2
+  },
+  {
+   "id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "codigo": "FLEXION_HOMBRO",
+   "nombre": "Flexión de hombro",
+   "articulacion": "hombro",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Subes el brazo por delante del cuerpo.",
+   "descripcion_tecnica": "El húmero avanza en el plano sagital. Motor principal: deltoides anterior, con ayuda de la porción clavicular del pectoral.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 3
+  },
+  {
+   "id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "codigo": "EXTENSION_HOMBRO",
+   "nombre": "Extensión de hombro",
+   "articulacion": "hombro",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Llevas el brazo desde delante hacia atrás, con el codo cerca del cuerpo.",
+   "descripcion_tecnica": "El húmero retrocede en el plano sagital, como en el remo con codos pegados o el pullover. Motor principal: dorsal ancho.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 4
+  },
+  {
+   "id": "31dcc61c-a13d-53fd-a507-fbc405c20803",
+   "codigo": "ABDUCCION_HOMBRO",
+   "nombre": "Abducción de hombro",
+   "articulacion": "hombro",
+   "plano": "FRONTAL",
+   "descripcion_simple": "Subes el brazo por el costado, alejándolo del cuerpo.",
+   "descripcion_tecnica": "El húmero se separa del tronco en el plano frontal. Motor principal: deltoides lateral; por encima de 90 grados participa el trapecio rotando la escápula.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 5
+  },
+  {
+   "id": "2de89f39-0bd9-58ec-95b1-68635167630c",
+   "codigo": "ADUCCION_HOMBRO",
+   "nombre": "Aducción de hombro",
+   "articulacion": "hombro",
+   "plano": "FRONTAL",
+   "descripcion_simple": "Bajas el brazo por el costado hacia el cuerpo, como al cerrar las alas.",
+   "descripcion_tecnica": "El húmero se acerca al tronco en el plano frontal, como en el jalón abierto. Motor principal: dorsal ancho.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 6
+  },
+  {
+   "id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "codigo": "ADUCCION_HORIZONTAL_HOMBRO",
+   "nombre": "Aducción horizontal de hombro",
+   "articulacion": "hombro",
+   "plano": "TRANSVERSAL",
+   "descripcion_simple": "Con el brazo a la altura del hombro, lo llevas hacia el centro del pecho, como en un abrazo.",
+   "descripcion_tecnica": "El húmero se acerca a la línea media en el plano transversal, como en el press de banca o las aperturas. Motor principal: pectoral mayor.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 7
+  },
+  {
+   "id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "codigo": "EXTENSION_HORIZONTAL_HOMBRO",
+   "nombre": "Extensión horizontal de hombro con retracción escapular",
+   "articulacion": "hombro",
+   "plano": "TRANSVERSAL",
+   "descripcion_simple": "Con los brazos abiertos a la altura del pecho, los llevas hacia atrás y juntas los omóplatos.",
+   "descripcion_tecnica": "El húmero se aleja de la línea media en el plano transversal mientras las escápulas se retraen (y se protraen al volver), como en el remo con brazos abiertos. Motores principales: trapecio medio, romboides y deltoides posterior.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 8
+  },
+  {
+   "id": "73b127d2-1977-5871-bb36-22aaf96770b8",
+   "codigo": "ELEVACION_ESCAPULAR",
+   "nombre": "Elevación escapular",
+   "articulacion": "escápula",
+   "plano": null,
+   "descripcion_simple": "Subes los hombros hacia las orejas, como encogiéndote.",
+   "descripcion_tecnica": "Las escápulas se elevan sobre el tórax, como en los encogimientos. Motor principal: trapecio superior.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 9
+  },
+  {
+   "id": "32ace286-7ab4-5d4b-b9f7-f6b173bf9f5e",
+   "codigo": "FLEXION_COLUMNA",
+   "nombre": "Flexión de columna",
+   "articulacion": "columna",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Enrollas la espalda acercando el pecho a la pelvis.",
+   "descripcion_tecnica": "La columna se flexiona vértebra a vértebra. Motor principal: recto abdominal, con los oblicuos.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 10
+  },
+  {
+   "id": "d0669fa1-0446-50b5-a1aa-778a3808d05a",
+   "codigo": "EXTENSION_COLUMNA",
+   "nombre": "Extensión de columna",
+   "articulacion": "columna",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Desenrollas la espalda hasta dejarla recta o ligeramente arqueada.",
+   "descripcion_tecnica": "La columna se extiende desde la flexión. Motor principal: erectores espinales de la zona lumbar.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 11
+  },
+  {
+   "id": "b912367f-9c40-55e7-8115-f90d3409f205",
+   "codigo": "FLEXION_FEMUR",
+   "nombre": "Flexión de fémur",
+   "articulacion": "cadera",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Con el tronco fijo, subes el muslo hacia delante.",
+   "descripcion_tecnica": "El fémur rota hacia delante sobre una pelvis fija, como en la elevación de piernas colgado. Motor principal: iliopsoas, con el recto femoral.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 12
+  },
+  {
+   "id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "codigo": "EXTENSION_FEMUR",
+   "nombre": "Extensión de fémur",
+   "articulacion": "cadera",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Con el tronco fijo, llevas el muslo hacia atrás.",
+   "descripcion_tecnica": "El fémur rota hacia atrás sobre una pelvis fija (movimiento fémoro-pélvico), como en la patada de glúteo. Motor principal: glúteo mayor; los isquiotibiales ayudan más cuanto más estirada está la rodilla.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 13
+  },
+  {
+   "id": "da4c70c5-d4ca-5753-aa3b-69a71d9c531e",
+   "codigo": "FLEXION_CADERA",
+   "nombre": "Flexión de cadera (bisagra)",
+   "articulacion": "cadera",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Con las piernas fijas, llevas el tronco hacia los muslos doblándote desde la cadera.",
+   "descripcion_tecnica": "La pelvis y el tronco rotan hacia delante sobre un fémur fijo, como en el sit-up. Motor principal: iliopsoas; el recto abdominal flexiona además la columna.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 14
+  },
+  {
+   "id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "codigo": "EXTENSION_CADERA",
+   "nombre": "Extensión de cadera (bisagra)",
+   "articulacion": "cadera",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Con los pies fijos y las piernas casi quietas, enderezas el tronco desde la cadera, como una bisagra que se cierra hacia arriba.",
+   "descripcion_tecnica": "La pelvis y el tronco rotan sobre un fémur fijo (movimiento pélvico-femoral), como en el peso muerto rumano. Motores principales: glúteo mayor e isquiotibiales; los erectores espinales sostienen la columna.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 15
+  },
+  {
+   "id": "42452948-8bf3-5473-89bc-095826d3db59",
+   "codigo": "ABDUCCION_CADERA",
+   "nombre": "Abducción de cadera",
+   "articulacion": "cadera",
+   "plano": "FRONTAL",
+   "descripcion_simple": "Separas la pierna hacia el costado, alejándola de la otra.",
+   "descripcion_tecnica": "El fémur se aleja de la línea media en el plano frontal, como en la máquina abductora. Motor principal: glúteo medio.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 16
+  },
+  {
+   "id": "d03b2bf0-21f3-580e-bda1-d25694e221e3",
+   "codigo": "ADUCCION_CADERA",
+   "nombre": "Aducción de cadera",
+   "articulacion": "cadera",
+   "plano": "FRONTAL",
+   "descripcion_simple": "Juntas la pierna hacia la otra.",
+   "descripcion_tecnica": "El fémur se acerca a la línea media en el plano frontal, como en la máquina aductora. Motores principales: aductores.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 17
+  },
+  {
+   "id": "45fa5585-0eba-5c31-8766-46ff88282f17",
+   "codigo": "FLEXION_RODILLA",
+   "nombre": "Flexión de rodilla",
+   "articulacion": "rodilla",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Doblas la rodilla y acercas el talón al glúteo.",
+   "descripcion_tecnica": "Disminuye el ángulo de la rodilla. Motor principal: isquiotibiales; al cruzar también la cadera, trabajan más estirados con la cadera flexionada (sentado).",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 18
+  },
+  {
+   "id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "codigo": "EXTENSION_RODILLA",
+   "nombre": "Extensión de rodilla",
+   "articulacion": "rodilla",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Estiras la rodilla y alejas el pie del glúteo.",
+   "descripcion_tecnica": "Aumenta el ángulo de la rodilla. Motor principal: cuádriceps; el recto femoral también cruza la cadera.",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 19
+  },
+  {
+   "id": "b2572f3c-17f1-5a73-b1ce-dcf1c07e4572",
+   "codigo": "FLEXION_PLANTAR",
+   "nombre": "Flexión plantar de tobillo",
+   "articulacion": "tobillo",
+   "plano": "SAGITAL",
+   "descripcion_simple": "Te pones de puntillas.",
+   "descripcion_tecnica": "El pie apunta hacia abajo. Motores principales: gemelos (más activos con la rodilla estirada) y sóleo (más activo con la rodilla doblada).",
+   "imagen_url": null,
+   "video_url": null,
+   "orden": 20
+  }
+ ],
+ "musculos": [
+  {
+   "id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "codigo": "ADUCTORES",
+   "nombre": "Aductores",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "codigo": "BICEPS",
+   "nombre": "Bíceps braquial",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "2694e095-c92e-5120-a36e-c87fe537573f",
+   "codigo": "BRAQUIAL",
+   "nombre": "Braquial",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "22202b79-edf8-530c-b9a2-ee25c7fa3430",
+   "codigo": "BRAQUIORRADIAL",
+   "nombre": "Braquiorradial",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "codigo": "CUADRICEPS",
+   "nombre": "Cuádriceps",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "codigo": "DELTOIDES_ANTERIOR",
+   "nombre": "Deltoides anterior",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "codigo": "DELTOIDES_LATERAL",
+   "nombre": "Deltoides lateral",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "codigo": "DELTOIDES_POSTERIOR",
+   "nombre": "Deltoides posterior",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "codigo": "DORSAL_ANCHO",
+   "nombre": "Dorsal ancho",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "codigo": "ERECTORES_ESPINALES",
+   "nombre": "Erectores espinales (zona lumbar)",
+   "region": "CORE"
+  },
+  {
+   "id": "9b76624c-2a00-576a-b074-dca401905b79",
+   "codigo": "GEMELOS",
+   "nombre": "Gemelos",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "codigo": "GLUTEO_MAYOR",
+   "nombre": "Glúteo mayor",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "5a355b44-9c6f-52b0-91f5-5b453f3dcf9c",
+   "codigo": "GLUTEO_MEDIO",
+   "nombre": "Glúteo medio",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "codigo": "ILIOPSOAS",
+   "nombre": "Iliopsoas",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "codigo": "ISQUIOTIBIALES",
+   "nombre": "Isquiotibiales",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "ebdeaa3d-e9e4-5d39-a8a5-7b2ee32c5bd2",
+   "codigo": "OBLICUOS",
+   "nombre": "Oblicuos",
+   "region": "CORE"
+  },
+  {
+   "id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "codigo": "PECTORAL_MAYOR",
+   "nombre": "Pectoral mayor",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "codigo": "PECTORAL_SUPERIOR",
+   "nombre": "Pectoral mayor, porción clavicular (pecho superior)",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "codigo": "RECTO_ABDOMINAL",
+   "nombre": "Recto abdominal",
+   "region": "CORE"
+  },
+  {
+   "id": "a20f4d66-c309-53fc-bfd3-8937d4828457",
+   "codigo": "ROMBOIDES",
+   "nombre": "Romboides",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "447ecbdd-9b9e-589f-9aeb-78127c5dadf5",
+   "codigo": "SOLEO",
+   "nombre": "Sóleo",
+   "region": "TREN_INFERIOR"
+  },
+  {
+   "id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "codigo": "TRAPECIO",
+   "nombre": "Trapecio",
+   "region": "TREN_SUPERIOR"
+  },
+  {
+   "id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "codigo": "TRICEPS",
+   "nombre": "Tríceps braquial",
+   "region": "TREN_SUPERIOR"
+  }
+ ],
+ "patronMusculo": [
+  {
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "musculo_id": "2694e095-c92e-5120-a36e-c87fe537573f",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "musculo_id": "22202b79-edf8-530c-b9a2-ee25c7fa3430",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "2de89f39-0bd9-58ec-95b1-68635167630c",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "31dcc61c-a13d-53fd-a507-fbc405c20803",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "31dcc61c-a13d-53fd-a507-fbc405c20803",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "32ace286-7ab4-5d4b-b9f7-f6b173bf9f5e",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "32ace286-7ab4-5d4b-b9f7-f6b173bf9f5e",
+   "musculo_id": "ebdeaa3d-e9e4-5d39-a8a5-7b2ee32c5bd2",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "42452948-8bf3-5473-89bc-095826d3db59",
+   "musculo_id": "5a355b44-9c6f-52b0-91f5-5b453f3dcf9c",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "45fa5585-0eba-5c31-8766-46ff88282f17",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "45fa5585-0eba-5c31-8766-46ff88282f17",
+   "musculo_id": "9b76624c-2a00-576a-b074-dca401905b79",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "musculo_id": "a20f4d66-c309-53fc-bfd3-8937d4828457",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "73b127d2-1977-5871-bb36-22aaf96770b8",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "b2572f3c-17f1-5a73-b1ce-dcf1c07e4572",
+   "musculo_id": "447ecbdd-9b9e-589f-9aeb-78127c5dadf5",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "b2572f3c-17f1-5a73-b1ce-dcf1c07e4572",
+   "musculo_id": "9b76624c-2a00-576a-b074-dca401905b79",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "b912367f-9c40-55e7-8115-f90d3409f205",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "b912367f-9c40-55e7-8115-f90d3409f205",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "d03b2bf0-21f3-580e-bda1-d25694e221e3",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "d0669fa1-0446-50b5-a1aa-778a3808d05a",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "da4c70c5-d4ca-5753-aa3b-69a71d9c531e",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "da4c70c5-d4ca-5753-aa3b-69a71d9c531e",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "rol": "SECUNDARIO"
+  },
+  {
+   "patron_articular_id": "e6aa4655-852d-53c3-9aa4-37772d623333",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "rol": "PRINCIPAL"
+  },
+  {
+   "patron_articular_id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "rol": "SECUNDARIO"
+  }
+ ],
+ "ejercicios": [
+  {
+   "id": "d0e8f175-b9e6-5e60-92d2-90c779418b43",
+   "codigo": "ABDUCCION_POLEA",
+   "nombre": "Abducción de cadera en polea",
+   "musculo_id": "5a355b44-9c6f-52b0-91f5-5b453f3dcf9c",
+   "patron_articular_id": "42452948-8bf3-5473-89bc-095826d3db59",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "13bbc605-77d6-5fb3-8a0b-956363f381af",
+   "codigo": "ABDUCTORA",
+   "nombre": "Máquina abductora",
+   "musculo_id": "5a355b44-9c6f-52b0-91f5-5b453f3dcf9c",
+   "patron_articular_id": "42452948-8bf3-5473-89bc-095826d3db59",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "f4a92033-367e-58da-870b-40566d631ae0",
+   "codigo": "ADUCTORA",
+   "nombre": "Máquina aductora",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "patron_articular_id": "d03b2bf0-21f3-580e-bda1-d25694e221e3",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "fca0719b-5c75-5818-bafe-e9d979aa0653",
+   "codigo": "APERTURAS_MANCUERNAS",
+   "nombre": "Aperturas con mancuernas",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": "ESTIRADO",
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "fbe0ba02-1ff0-59c1-8794-3e3487ab3367",
+   "codigo": "BUENOS_DIAS",
+   "nombre": "Buenos días",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "enfasis": "ESTIRADO",
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "12707f62-6913-524a-a3d8-8e2d28d595db",
+   "codigo": "CRUCE_POLEAS",
+   "nombre": "Cruce de poleas",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "9bd728cd-cd8d-5e2e-9c68-c91abd3cc1c3",
+   "codigo": "CRUCE_POLEAS_BAJO",
+   "nombre": "Cruce de poleas de abajo hacia arriba",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "patron_articular_id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "1ad6b4ac-10a9-5a43-8cec-e61a95d463e6",
+   "codigo": "CRUNCH",
+   "nombre": "Crunch abdominal",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "patron_articular_id": "32ace286-7ab4-5d4b-b9f7-f6b173bf9f5e",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "6c86292a-0381-5c82-963d-4ec29402c139",
+   "codigo": "CRUNCH_MAQUINA",
+   "nombre": "Crunch en máquina",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "patron_articular_id": "32ace286-7ab4-5d4b-b9f7-f6b173bf9f5e",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "a8868e96-cca7-5433-a3c6-bd1d2224c943",
+   "codigo": "CRUNCH_POLEA",
+   "nombre": "Crunch en polea",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "patron_articular_id": "32ace286-7ab4-5d4b-b9f7-f6b173bf9f5e",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "cb1383aa-d92b-584d-9a86-803989d827a1",
+   "codigo": "CURL_BARRA",
+   "nombre": "Curl de bíceps con barra",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "b3f2c2ec-202e-5380-aad6-2f0a31be3cf1",
+   "codigo": "CURL_FEMORAL_SENTADO",
+   "nombre": "Curl femoral sentado",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "patron_articular_id": "45fa5585-0eba-5c31-8766-46ff88282f17",
+   "enfasis": "ESTIRADO",
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "d1a5d096-3cf2-5ca9-8b4b-7481ac606a4e",
+   "codigo": "CURL_FEMORAL_TUMBADO",
+   "nombre": "Curl femoral tumbado",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "patron_articular_id": "45fa5585-0eba-5c31-8766-46ff88282f17",
+   "enfasis": "ACORTADO",
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "9409c202-16a5-505d-afc4-11ef5b8278b7",
+   "codigo": "CURL_INCLINADO",
+   "nombre": "Curl inclinado con mancuernas",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "enfasis": "ESTIRADO",
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "598e5467-aec3-54c8-9913-ce005d06927d",
+   "codigo": "CURL_MANCUERNAS",
+   "nombre": "Curl de bíceps con mancuernas",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "f0c02873-d051-527d-9351-63ee742c131b",
+   "codigo": "CURL_MARTILLO",
+   "nombre": "Curl martillo",
+   "musculo_id": "22202b79-edf8-530c-b9a2-ee25c7fa3430",
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "222502de-2303-52e7-ba9c-23faaeba94f6",
+   "codigo": "CURL_NORDICO",
+   "nombre": "Curl nórdico",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "patron_articular_id": "45fa5585-0eba-5c31-8766-46ff88282f17",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "da9cb667-9525-5885-b217-c0e49b27c728",
+   "codigo": "CURL_POLEA",
+   "nombre": "Curl en polea",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "6baf5dad-67fe-5c85-bd9d-26c07bd6bfd4",
+   "codigo": "CURL_PREDICADOR",
+   "nombre": "Curl predicador",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "patron_articular_id": "19a11ce7-4dbe-5f0e-9faa-61b73f5b4339",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "810907b6-a5ae-5c60-9632-52cee90ea452",
+   "codigo": "DOMINADAS",
+   "nombre": "Dominadas",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "2de89f39-0bd9-58ec-95b1-68635167630c",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "e0a3e085-9f93-5502-bea1-b21322eefa19",
+   "codigo": "ELEVACION_FRONTAL",
+   "nombre": "Elevación frontal",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "patron_articular_id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "b496ae38-7974-5709-9ccc-5cbbc236c3fd",
+   "codigo": "ELEVACION_LATERAL",
+   "nombre": "Elevaciones laterales con mancuernas",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "patron_articular_id": "31dcc61c-a13d-53fd-a507-fbc405c20803",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "178d071a-ca62-5e84-b44a-590d52516c4d",
+   "codigo": "ELEVACION_LATERAL_MAQUINA",
+   "nombre": "Elevaciones laterales en máquina",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "patron_articular_id": "31dcc61c-a13d-53fd-a507-fbc405c20803",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "a7ad193e-89c7-517e-b8c1-4fc0d0c1aba2",
+   "codigo": "ELEVACION_LATERAL_POLEA",
+   "nombre": "Elevaciones laterales en polea",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "patron_articular_id": "31dcc61c-a13d-53fd-a507-fbc405c20803",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "76e3d609-c6b8-5ab9-b1e0-e44d10c61dab",
+   "codigo": "ELEVACION_PIERNAS_COLGADO",
+   "nombre": "Elevación de piernas colgado",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "patron_articular_id": "b912367f-9c40-55e7-8115-f90d3409f205",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "42a75118-de9a-5e95-a2e4-04aaee3f19b7",
+   "codigo": "ELEVACION_RODILLAS_PARALELAS",
+   "nombre": "Elevación de rodillas en paralelas",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "patron_articular_id": "b912367f-9c40-55e7-8115-f90d3409f205",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "d0b79818-f876-530e-8914-4ad66fb99507",
+   "codigo": "ENCOGIMIENTOS_BARRA",
+   "nombre": "Encogimientos con barra",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "patron_articular_id": "73b127d2-1977-5871-bb36-22aaf96770b8",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "deec733f-605c-5329-a0ca-2702f7b60809",
+   "codigo": "ENCOGIMIENTOS_MANCUERNAS",
+   "nombre": "Encogimientos con mancuernas",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "patron_articular_id": "73b127d2-1977-5871-bb36-22aaf96770b8",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "2c769639-6fc2-53ea-8c59-50ec9a7c17bb",
+   "codigo": "EXTENSION_LUMBAR_45",
+   "nombre": "Extensión lumbar en banco de 45° (espalda redondeada)",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "patron_articular_id": "d0669fa1-0446-50b5-a1aa-778a3808d05a",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "2ef4ae47-2bae-5fc0-a5a9-93e3aec21016",
+   "codigo": "EXTENSION_LUMBAR_MAQUINA",
+   "nombre": "Extensión lumbar en máquina",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "patron_articular_id": "d0669fa1-0446-50b5-a1aa-778a3808d05a",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "cb5996bd-6523-5eb5-ac48-c1d075330f08",
+   "codigo": "EXTENSION_RODILLA_MAQUINA",
+   "nombre": "Extensión de rodilla en máquina",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "patron_articular_id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "8f0407e7-d654-5eb4-9d19-474366af3a9b",
+   "codigo": "FACE_PULL",
+   "nombre": "Face pull",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "875f60b7-5992-57d6-a715-a134cd253e9a",
+   "codigo": "FLEXION_CADERA_POLEA",
+   "nombre": "Flexión de fémur en polea",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "patron_articular_id": "b912367f-9c40-55e7-8115-f90d3409f205",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "1961f5b4-08e0-5b79-998d-b704d91d02d9",
+   "codigo": "GEMELOS_DE_PIE",
+   "nombre": "Elevación de talones de pie",
+   "musculo_id": "9b76624c-2a00-576a-b074-dca401905b79",
+   "patron_articular_id": "b2572f3c-17f1-5a73-b1ce-dcf1c07e4572",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "e893fc49-0bdf-5283-bb80-f04f3d1eb657",
+   "codigo": "GEMELOS_SENTADO",
+   "nombre": "Elevación de talones sentado",
+   "musculo_id": "447ecbdd-9b9e-589f-9aeb-78127c5dadf5",
+   "patron_articular_id": "b2572f3c-17f1-5a73-b1ce-dcf1c07e4572",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "96c41dcf-bf8d-5fbe-89b1-80b9daa29dcd",
+   "codigo": "HIP_THRUST",
+   "nombre": "Hip thrust",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "patron_articular_id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "enfasis": "ACORTADO",
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "72c2c57c-707f-5219-9f71-7aae09599fd5",
+   "codigo": "HIPEREXTENSION_45",
+   "nombre": "Hiperextensión en banco de 45°",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "046172a4-e50b-5d8b-936a-8a00e0055799",
+   "codigo": "HIPEREXTENSION_INVERSA",
+   "nombre": "Hiperextensión inversa",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "patron_articular_id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "cef49d49-868a-5a09-835a-2603c1c703bc",
+   "codigo": "JALON_ABIERTO",
+   "nombre": "Jalón al pecho abierto",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "2de89f39-0bd9-58ec-95b1-68635167630c",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "66a3d872-ad9b-5213-b9d1-a3b9912a7479",
+   "codigo": "JALON_CERRADO_SUPINO",
+   "nombre": "Jalón con agarre cerrado supino",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "66c92e5b-6747-5015-9350-66a29846ad06",
+   "codigo": "JALON_MAQUINA",
+   "nombre": "Jalón en máquina",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "2de89f39-0bd9-58ec-95b1-68635167630c",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "640a9175-21c7-5570-8320-78f6a59e9f95",
+   "codigo": "PAJAROS_MAQUINA",
+   "nombre": "Deltoides posterior en máquina (pájaros)",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "b96308d7-eb3e-54a1-b0b4-0e4425b29bbb",
+   "codigo": "PATADA_GLUTEO_MAQUINA",
+   "nombre": "Patada de glúteo en máquina",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "patron_articular_id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "57f685f0-a3c5-54eb-94ab-e3805e27d518",
+   "codigo": "PATADA_GLUTEO_POLEA",
+   "nombre": "Patada de glúteo en polea",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "patron_articular_id": "8a5b24eb-4ff1-5cc9-b222-8b7f9f8e188f",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "7d6d51bf-7edf-5f16-bbce-3148f140bed6",
+   "codigo": "PEC_DECK",
+   "nombre": "Contractora (pec deck)",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "codigo": "PESO_MUERTO",
+   "nombre": "Peso muerto convencional",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "22b8acf9-430e-5b0b-ba9c-2e689e7f4562",
+   "codigo": "PESO_MUERTO_RUMANO",
+   "nombre": "Peso muerto rumano",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "enfasis": "ESTIRADO",
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "d90e893f-1f00-5d09-b0f7-253db0c98d8e",
+   "codigo": "PESO_MUERTO_RUMANO_MANCUERNAS",
+   "nombre": "Peso muerto rumano con mancuernas",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "patron_articular_id": "b8f3da07-6171-57ae-be72-f6872fa0c499",
+   "enfasis": "ESTIRADO",
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "2134cd92-8cc4-565b-9c1c-e33bf82e9099",
+   "codigo": "PRENSA",
+   "nombre": "Prensa de piernas",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "patron_articular_id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "f5c9f07d-bce0-53e5-b775-5ef56df4a1a3",
+   "codigo": "PRESS_BANCA",
+   "nombre": "Press de banca con barra",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "7828fca0-7b29-565c-be1c-c78feed450ef",
+   "codigo": "PRESS_FRANCES",
+   "nombre": "Press francés",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "patron_articular_id": "e6aa4655-852d-53c3-9aa4-37772d623333",
+   "enfasis": null,
+   "equipo": "barra Z",
+   "notas": null
+  },
+  {
+   "id": "19b226b7-f8ae-5ffd-8e81-e97ffe0f8bee",
+   "codigo": "PRESS_HOMBRO_MANCUERNAS",
+   "nombre": "Press de hombro con mancuernas",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "patron_articular_id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "f22f9f96-92b2-57d2-b550-bf7fe8f0bdb6",
+   "codigo": "PRESS_INCLINADO_BARRA",
+   "nombre": "Press inclinado con barra",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "2533db60-57da-592b-9f87-15f1376fe4f8",
+   "codigo": "PRESS_INCLINADO_MANCUERNAS",
+   "nombre": "Press inclinado con mancuernas",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "2194bc6d-ca8f-5f65-b425-d60587640bab",
+   "codigo": "PRESS_MILITAR",
+   "nombre": "Press militar",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "patron_articular_id": "f9ad45d3-74c2-5fa3-bc87-8485fbdfcec9",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "a0100109-acca-505c-825a-5dfe991e7cfc",
+   "codigo": "PRESS_PECHO_MAQUINA",
+   "nombre": "Press de pecho en máquina",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "patron_articular_id": "556a7df8-f807-556e-9077-b888c95a41bf",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "b196ca9d-b5cc-578e-bdb8-090f3493e1e8",
+   "codigo": "PULLOVER_POLEA",
+   "nombre": "Pullover en polea",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "enfasis": "ESTIRADO",
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "c44712fb-fdae-54c3-92eb-42a94e4dffb5",
+   "codigo": "REMO_ABIERTO_BARRA",
+   "nombre": "Remo con barra y brazos abiertos",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "56d84454-3878-5827-84cd-cba8688f522f",
+   "codigo": "REMO_ABIERTO_MAQUINA",
+   "nombre": "Remo abierto en máquina",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "patron_articular_id": "678ba349-d307-5c4e-b492-02dc920c3bef",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "9a65ff4f-7118-5cd4-84f3-e05d3d02b3a7",
+   "codigo": "REMO_MANCUERNA",
+   "nombre": "Remo con mancuerna a una mano",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "68e0181c-7042-579f-ac5d-4262c84719e0",
+   "codigo": "REMO_POLEA_CERRADO",
+   "nombre": "Remo en polea baja con agarre cerrado",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "patron_articular_id": "ba095112-8572-5e0b-85c6-5aec06cd0dd0",
+   "enfasis": null,
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "a2fbb67a-ec17-5655-a20f-cba3dc237657",
+   "codigo": "SENTADILLA_BARRA",
+   "nombre": "Sentadilla con barra",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "patron_articular_id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "enfasis": null,
+   "equipo": "barra",
+   "notas": null
+  },
+  {
+   "id": "a34340dd-e80e-5dd3-891f-b294a18f0530",
+   "codigo": "SENTADILLA_BULGARA",
+   "nombre": "Sentadilla búlgara",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "patron_articular_id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "enfasis": null,
+   "equipo": "mancuernas",
+   "notas": null
+  },
+  {
+   "id": "b7c16747-4220-5649-aa6f-9dbf467a9d3c",
+   "codigo": "SENTADILLA_HACK",
+   "nombre": "Sentadilla hack",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "patron_articular_id": "720c6ca9-b985-5f80-89aa-570025350fd2",
+   "enfasis": null,
+   "equipo": "máquina",
+   "notas": null
+  },
+  {
+   "id": "9945041c-67a9-59ce-a5aa-8b0295b7f6f8",
+   "codigo": "SIT_UP_DECLINADO",
+   "nombre": "Sit-up en banco declinado",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "patron_articular_id": "da4c70c5-d4ca-5753-aa3b-69a71d9c531e",
+   "enfasis": null,
+   "equipo": "peso corporal",
+   "notas": null
+  },
+  {
+   "id": "c2931c77-285e-5e83-81f5-443f89fe8685",
+   "codigo": "TRICEPS_POLEA",
+   "nombre": "Extensión de tríceps en polea",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "patron_articular_id": "e6aa4655-852d-53c3-9aa4-37772d623333",
+   "enfasis": "ACORTADO",
+   "equipo": "polea",
+   "notas": null
+  },
+  {
+   "id": "63fffe3b-e918-5be3-840b-7fa1e147b53f",
+   "codigo": "TRICEPS_SOBRE_CABEZA",
+   "nombre": "Extensión de tríceps sobre la cabeza",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "patron_articular_id": "e6aa4655-852d-53c3-9aa4-37772d623333",
+   "enfasis": "ESTIRADO",
+   "equipo": "polea",
+   "notas": null
+  }
+ ],
+ "ejercicioMusculo": [
+  {
+   "ejercicio_id": "046172a4-e50b-5d8b-936a-8a00e0055799",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "046172a4-e50b-5d8b-936a-8a00e0055799",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "12707f62-6913-524a-a3d8-8e2d28d595db",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "12707f62-6913-524a-a3d8-8e2d28d595db",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "13bbc605-77d6-5fb3-8a0b-956363f381af",
+   "musculo_id": "5a355b44-9c6f-52b0-91f5-5b453f3dcf9c",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "178d071a-ca62-5e84-b44a-590d52516c4d",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "178d071a-ca62-5e84-b44a-590d52516c4d",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "1961f5b4-08e0-5b79-998d-b704d91d02d9",
+   "musculo_id": "9b76624c-2a00-576a-b074-dca401905b79",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "19b226b7-f8ae-5ffd-8e81-e97ffe0f8bee",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "19b226b7-f8ae-5ffd-8e81-e97ffe0f8bee",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "19b226b7-f8ae-5ffd-8e81-e97ffe0f8bee",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "19b226b7-f8ae-5ffd-8e81-e97ffe0f8bee",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "1ad6b4ac-10a9-5a43-8cec-e61a95d463e6",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "1ad6b4ac-10a9-5a43-8cec-e61a95d463e6",
+   "musculo_id": "ebdeaa3d-e9e4-5d39-a8a5-7b2ee32c5bd2",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "2134cd92-8cc4-565b-9c1c-e33bf82e9099",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "2134cd92-8cc4-565b-9c1c-e33bf82e9099",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "2134cd92-8cc4-565b-9c1c-e33bf82e9099",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "2194bc6d-ca8f-5f65-b425-d60587640bab",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "2194bc6d-ca8f-5f65-b425-d60587640bab",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "2194bc6d-ca8f-5f65-b425-d60587640bab",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "2194bc6d-ca8f-5f65-b425-d60587640bab",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "222502de-2303-52e7-ba9c-23faaeba94f6",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "222502de-2303-52e7-ba9c-23faaeba94f6",
+   "musculo_id": "9b76624c-2a00-576a-b074-dca401905b79",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "22b8acf9-430e-5b0b-ba9c-2e689e7f4562",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "22b8acf9-430e-5b0b-ba9c-2e689e7f4562",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "22b8acf9-430e-5b0b-ba9c-2e689e7f4562",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "22b8acf9-430e-5b0b-ba9c-2e689e7f4562",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "2533db60-57da-592b-9f87-15f1376fe4f8",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "2533db60-57da-592b-9f87-15f1376fe4f8",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "2533db60-57da-592b-9f87-15f1376fe4f8",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "2533db60-57da-592b-9f87-15f1376fe4f8",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "2c769639-6fc2-53ea-8c59-50ec9a7c17bb",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "2ef4ae47-2bae-5fc0-a5a9-93e3aec21016",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "42a75118-de9a-5e95-a2e4-04aaee3f19b7",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "42a75118-de9a-5e95-a2e4-04aaee3f19b7",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "56d84454-3878-5827-84cd-cba8688f522f",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "56d84454-3878-5827-84cd-cba8688f522f",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "56d84454-3878-5827-84cd-cba8688f522f",
+   "musculo_id": "a20f4d66-c309-53fc-bfd3-8937d4828457",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "56d84454-3878-5827-84cd-cba8688f522f",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "56d84454-3878-5827-84cd-cba8688f522f",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "57f685f0-a3c5-54eb-94ab-e3805e27d518",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "598e5467-aec3-54c8-9913-ce005d06927d",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "63fffe3b-e918-5be3-840b-7fa1e147b53f",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "640a9175-21c7-5570-8320-78f6a59e9f95",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "640a9175-21c7-5570-8320-78f6a59e9f95",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "640a9175-21c7-5570-8320-78f6a59e9f95",
+   "musculo_id": "a20f4d66-c309-53fc-bfd3-8937d4828457",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "66a3d872-ad9b-5213-b9d1-a3b9912a7479",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "66a3d872-ad9b-5213-b9d1-a3b9912a7479",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "66a3d872-ad9b-5213-b9d1-a3b9912a7479",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "66c92e5b-6747-5015-9350-66a29846ad06",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "66c92e5b-6747-5015-9350-66a29846ad06",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "68e0181c-7042-579f-ac5d-4262c84719e0",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "68e0181c-7042-579f-ac5d-4262c84719e0",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "68e0181c-7042-579f-ac5d-4262c84719e0",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "6baf5dad-67fe-5c85-bd9d-26c07bd6bfd4",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "6c86292a-0381-5c82-963d-4ec29402c139",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "6c86292a-0381-5c82-963d-4ec29402c139",
+   "musculo_id": "ebdeaa3d-e9e4-5d39-a8a5-7b2ee32c5bd2",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "72c2c57c-707f-5219-9f71-7aae09599fd5",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "72c2c57c-707f-5219-9f71-7aae09599fd5",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "72c2c57c-707f-5219-9f71-7aae09599fd5",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "76e3d609-c6b8-5ab9-b1e0-e44d10c61dab",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "76e3d609-c6b8-5ab9-b1e0-e44d10c61dab",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "7828fca0-7b29-565c-be1c-c78feed450ef",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "7d6d51bf-7edf-5f16-bbce-3148f140bed6",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "7d6d51bf-7edf-5f16-bbce-3148f140bed6",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "810907b6-a5ae-5c60-9632-52cee90ea452",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "810907b6-a5ae-5c60-9632-52cee90ea452",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "875f60b7-5992-57d6-a715-a134cd253e9a",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "8f0407e7-d654-5eb4-9d19-474366af3a9b",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "8f0407e7-d654-5eb4-9d19-474366af3a9b",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "8f0407e7-d654-5eb4-9d19-474366af3a9b",
+   "musculo_id": "a20f4d66-c309-53fc-bfd3-8937d4828457",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "9409c202-16a5-505d-afc4-11ef5b8278b7",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "96c41dcf-bf8d-5fbe-89b1-80b9daa29dcd",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "96c41dcf-bf8d-5fbe-89b1-80b9daa29dcd",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "96c41dcf-bf8d-5fbe-89b1-80b9daa29dcd",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "9945041c-67a9-59ce-a5aa-8b0295b7f6f8",
+   "musculo_id": "cade82a6-2430-5ddb-80a1-a303f627d9b4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "9945041c-67a9-59ce-a5aa-8b0295b7f6f8",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "9a65ff4f-7118-5cd4-84f3-e05d3d02b3a7",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "9a65ff4f-7118-5cd4-84f3-e05d3d02b3a7",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "9a65ff4f-7118-5cd4-84f3-e05d3d02b3a7",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "9bd728cd-cd8d-5e2e-9c68-c91abd3cc1c3",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "9bd728cd-cd8d-5e2e-9c68-c91abd3cc1c3",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a0100109-acca-505c-825a-5dfe991e7cfc",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "a0100109-acca-505c-825a-5dfe991e7cfc",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a0100109-acca-505c-825a-5dfe991e7cfc",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "a2e457f4-831a-5633-b114-d45bfa7b31bb",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "a2fbb67a-ec17-5655-a20f-cba3dc237657",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "a2fbb67a-ec17-5655-a20f-cba3dc237657",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a2fbb67a-ec17-5655-a20f-cba3dc237657",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a2fbb67a-ec17-5655-a20f-cba3dc237657",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "a34340dd-e80e-5dd3-891f-b294a18f0530",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "a34340dd-e80e-5dd3-891f-b294a18f0530",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "a34340dd-e80e-5dd3-891f-b294a18f0530",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "a7ad193e-89c7-517e-b8c1-4fc0d0c1aba2",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "a7ad193e-89c7-517e-b8c1-4fc0d0c1aba2",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "a8868e96-cca7-5433-a3c6-bd1d2224c943",
+   "musculo_id": "7b393e99-f686-5c54-ba69-61d310ffded4",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "a8868e96-cca7-5433-a3c6-bd1d2224c943",
+   "musculo_id": "ebdeaa3d-e9e4-5d39-a8a5-7b2ee32c5bd2",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "b196ca9d-b5cc-578e-bdb8-090f3493e1e8",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "b196ca9d-b5cc-578e-bdb8-090f3493e1e8",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "b196ca9d-b5cc-578e-bdb8-090f3493e1e8",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "b3f2c2ec-202e-5380-aad6-2f0a31be3cf1",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "b496ae38-7974-5709-9ccc-5cbbc236c3fd",
+   "musculo_id": "2b28b1a8-9e15-5e28-87d3-29b5555c7ee5",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "b496ae38-7974-5709-9ccc-5cbbc236c3fd",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "b7c16747-4220-5649-aa6f-9dbf467a9d3c",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "b7c16747-4220-5649-aa6f-9dbf467a9d3c",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "b7c16747-4220-5649-aa6f-9dbf467a9d3c",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "b96308d7-eb3e-54a1-b0b4-0e4425b29bbb",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "c2931c77-285e-5e83-81f5-443f89fe8685",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "c44712fb-fdae-54c3-92eb-42a94e4dffb5",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "c44712fb-fdae-54c3-92eb-42a94e4dffb5",
+   "musculo_id": "1a7a85c4-d1d0-5521-95c5-ed7bf45cba3a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "c44712fb-fdae-54c3-92eb-42a94e4dffb5",
+   "musculo_id": "a20f4d66-c309-53fc-bfd3-8937d4828457",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "c44712fb-fdae-54c3-92eb-42a94e4dffb5",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "c44712fb-fdae-54c3-92eb-42a94e4dffb5",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "cb1383aa-d92b-584d-9a86-803989d827a1",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "cb5996bd-6523-5eb5-ac48-c1d075330f08",
+   "musculo_id": "5e5c16cd-a7ce-5c2b-960f-7e56386a3a66",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "cef49d49-868a-5a09-835a-2603c1c703bc",
+   "musculo_id": "0e791bdc-97a0-50c9-94a6-49c857ffb820",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "cef49d49-868a-5a09-835a-2603c1c703bc",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "d0b79818-f876-530e-8914-4ad66fb99507",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "d0e8f175-b9e6-5e60-92d2-90c779418b43",
+   "musculo_id": "5a355b44-9c6f-52b0-91f5-5b453f3dcf9c",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "d1a5d096-3cf2-5ca9-8b4b-7481ac606a4e",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "d90e893f-1f00-5d09-b0f7-253db0c98d8e",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "d90e893f-1f00-5d09-b0f7-253db0c98d8e",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "d90e893f-1f00-5d09-b0f7-253db0c98d8e",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "d90e893f-1f00-5d09-b0f7-253db0c98d8e",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "da9cb667-9525-5885-b217-c0e49b27c728",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "deec733f-605c-5329-a0ca-2702f7b60809",
+   "musculo_id": "5974ac73-cb12-50d4-a881-2dec8279e042",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "e0a3e085-9f93-5502-bea1-b21322eefa19",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "e0a3e085-9f93-5502-bea1-b21322eefa19",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "factor": 0.25
+  },
+  {
+   "ejercicio_id": "e893fc49-0bdf-5283-bb80-f04f3d1eb657",
+   "musculo_id": "447ecbdd-9b9e-589f-9aeb-78127c5dadf5",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "f0c02873-d051-527d-9351-63ee742c131b",
+   "musculo_id": "22202b79-edf8-530c-b9a2-ee25c7fa3430",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "f0c02873-d051-527d-9351-63ee742c131b",
+   "musculo_id": "f2dbdd6d-1d24-5372-bcc0-b59b4a9a7204",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "f0c02873-d051-527d-9351-63ee742c131b",
+   "musculo_id": "2694e095-c92e-5120-a36e-c87fe537573f",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "f22f9f96-92b2-57d2-b550-bf7fe8f0bdb6",
+   "musculo_id": "bcf4b0cb-3519-569a-bc78-b587fc04e12b",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "f22f9f96-92b2-57d2-b550-bf7fe8f0bdb6",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "f22f9f96-92b2-57d2-b550-bf7fe8f0bdb6",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "f22f9f96-92b2-57d2-b550-bf7fe8f0bdb6",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "f4a92033-367e-58da-870b-40566d631ae0",
+   "musculo_id": "100355b3-693f-5e0f-bf9c-1e1a63836535",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "f5c9f07d-bce0-53e5-b775-5ef56df4a1a3",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "f5c9f07d-bce0-53e5-b775-5ef56df4a1a3",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "f5c9f07d-bce0-53e5-b775-5ef56df4a1a3",
+   "musculo_id": "737b9d22-4be8-5f7c-b9e1-3243126813e2",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "fbe0ba02-1ff0-59c1-8794-3e3487ab3367",
+   "musculo_id": "039a70e9-6bf9-5e07-913d-3f1bb49990ad",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "fbe0ba02-1ff0-59c1-8794-3e3487ab3367",
+   "musculo_id": "e17065d3-086c-53b6-bf5d-74b981c09ab9",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "fbe0ba02-1ff0-59c1-8794-3e3487ab3367",
+   "musculo_id": "f6e7694e-4db6-5ef7-b91d-45fd1a278843",
+   "factor": 0.5
+  },
+  {
+   "ejercicio_id": "fca0719b-5c75-5818-bafe-e9d979aa0653",
+   "musculo_id": "1e0a4413-a9f1-5d42-b802-170ca8f0d7bc",
+   "factor": 1
+  },
+  {
+   "ejercicio_id": "fca0719b-5c75-5818-bafe-e9d979aa0653",
+   "musculo_id": "42fed807-1bb4-5be7-abfb-224aea2cb88a",
+   "factor": 0.25
+  }
+ ]
+}

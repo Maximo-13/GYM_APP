@@ -1,0 +1,33 @@
+<ion-content class="ion-padding">
+  <main class="bienvenida">
+    <header>
+      <p class="lema">Si no registras, estás perdiendo el tiempo en tus entrenamientos.</p>
+      <h1>¿Cuánto sabes de biomecánica?</h1>
+      <p class="ayuda">Así sabremos cuánto explicarte la primera vez que registres cada ejercicio.</p>
+    </header>
+
+    <div class="opciones" role="radiogroup" aria-label="Nivel">
+      @for (op of opciones; track op.nivel) {
+      <button
+        type="button"
+        class="opcion"
+        role="radio"
+        [attr.aria-checked]="elegido() === op.nivel"
+        [class.activa]="elegido() === op.nivel"
+        (click)="elegido.set(op.nivel)"
+      >
+        <span class="titulo">{{ op.titulo }}</span>
+        <span class="descripcion">{{ op.descripcion }}</span>
+        <span class="ejemplo">{{ op.ejemplo }}</span>
+      </button>
+      }
+    </div>
+
+    <ion-button expand="block" size="large" [disabled]="!elegido() || guardando()" (click)="empezar()">
+      @if (guardando()) {
+      <ion-spinner name="crescent"></ion-spinner>
+      } @else { Empezar }
+    </ion-button>
+    <p class="nota">Podrás cambiarlo cuando quieras.</p>
+  </main>
+</ion-content>
