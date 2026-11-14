@@ -15,3 +15,6 @@ Thumbs.db
 # Variables de entorno
 .env
 *.env.local
+
+# APK de prueba copiados para pasar al teléfono
+APK/
