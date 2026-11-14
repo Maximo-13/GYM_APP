@@ -17,7 +17,8 @@
     "test:unit": "ng test --no-watch",
     "test:unit:watch": "ng test --watch",
     "test:e2e": "playwright test",
-    "catalogo": "node scripts/exportar-catalogo.mjs"
+    "catalogo": "node scripts/exportar-catalogo.mjs",
+    "android": "ng build && cap sync android"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@angular/platform-browser": "22.2.5",
     "@angular/router": "22.2.5",
     "@capacitor-community/sqlite": "^8.1.1",
+    "@capacitor/android": "8.6.2",
     "@capacitor/app": "8.1.2",
     "@capacitor/core": "8.6.2",
     "@capacitor/haptics": "8.0.2",

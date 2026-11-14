@@ -25,7 +25,21 @@ cd frontend
 npm start
 ```
 
-Abre http://localhost:4200. Para Android/iOS, más adelante: `npx cap add android`.
+Abre http://localhost:4200.
+
+### Android
+
+El proyecto nativo está en `frontend/android` (id de la app: `com.gymapp.registro`).
+Requiere Android Studio, que trae el SDK de Android, un JDK 21 y el emulador.
+
+Cada vez que cambies la app, compila y copia los archivos al proyecto Android:
+
+```bash
+npm run android
+```
+
+Después, en Android Studio pulsa ▶ (Run) con tu teléfono conectado por USB
+(con la depuración USB activada) o con un emulador.
 
 La app guarda todo en una base SQLite dentro del teléfono (en el navegador usa sql.js
 guardado en IndexedDB). El esquema está en `src/app/core/db/esquema.ts` y el catálogo de
