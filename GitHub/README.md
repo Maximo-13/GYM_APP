@@ -27,6 +27,8 @@ Necesita MySQL encendido (XAMPP) con la base `gym_app`; Flyway crea las tablas.
 | POST | `/api/auth/login` | Iniciar sesión con correo y contraseña |
 | POST | `/api/auth/google` | Entrar o crear cuenta con Google (ID token) |
 | GET | `/api/cuenta` | Datos de la cuenta (requiere `Authorization: Bearer <token>`) |
+| PUT | `/api/cuenta/perfil` | Cambiar nombre, nivel, peso, objetivo y días por semana |
+| DELETE | `/api/cuenta` | Borrar la cuenta (se anonimiza y se libera el correo) |
 | POST | `/api/cuenta/google` | Vincular Google a la cuenta con sesión iniciada |
 
 Las contraseñas se guardan cifradas con BCrypt y la sesión es un JWT de 30 días.
@@ -83,7 +85,10 @@ npm run catalogo
 - Base de datos del servidor: MySQL con JPA + Flyway (migraciones V1 a V4).
 - Base SQLite en la app, con el mismo catálogo e IDs que el servidor.
 - Crear cuenta e iniciar sesión con correo, guardadas en MySQL; sesión que se mantiene al cerrar la app (RF-01).
-- Nivel elegido al crear la cuenta (RF-02).
+- Nivel elegido al crear la cuenta y editable en Mi cuenta (RF-02).
+- Mi cuenta: peso corporal, objetivo y días por semana (RF-03); los cambios hechos sin internet se envían al volver la conexión.
+- Borrar la cuenta y sus datos, en el servidor y en el teléfono (RNF-07).
+- Lo registrado en el teléfono antes de tener cuenta pasa a la cuenta al entrar.
 - Inicio de sesión y vinculación con Google listos en código; falta crear los ID de cliente en Google Cloud.
 - Rutinas con ejercicios en orden, día y series objetivo (RF-08).
 - Registro de series con peso, reps, RIR y check, editando la sesión en vivo (RF-09, RF-11, RF-13).

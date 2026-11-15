@@ -90,8 +90,26 @@ public class Usuario {
     public Nivel getNivel() { return nivel; }
     public void setNivel(Nivel nivel) { this.nivel = nivel; }
     public BigDecimal getPesoCorporalKg() { return pesoCorporalKg; }
+    public void setPesoCorporalKg(BigDecimal pesoCorporalKg) { this.pesoCorporalKg = pesoCorporalKg; }
     public String getObjetivo() { return objetivo; }
+    public void setObjetivo(String objetivo) { this.objetivo = objetivo; }
     public Byte getDiasPorSemana() { return diasPorSemana; }
+    public void setDiasPorSemana(Byte diasPorSemana) { this.diasPorSemana = diasPorSemana; }
+
+    /**
+     * Borrado de cuenta (RNF-07): se marca como borrada y se quitan los datos que
+     * identifican a la persona, liberando el correo para una cuenta futura.
+     */
+    public void borrar(LocalDateTime cuando) {
+        this.deletedAt = cuando;
+        this.email = "borrada+" + id + "@gymapp.invalid";
+        this.nombre = "Cuenta borrada";
+        this.passwordHash = null;
+        this.googleSub = null;
+        this.pesoCorporalKg = null;
+        this.objetivo = null;
+        this.diasPorSemana = null;
+    }
     public String getIdioma() { return idioma; }
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getDeletedAt() { return deletedAt; }

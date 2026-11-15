@@ -20,6 +20,7 @@ export const routes: Routes = [
       { path: 'inicio', loadComponent: () => import('./inicio/inicio.page').then((m) => m.InicioPage) },
       { path: 'rutina/:id', loadComponent: () => import('./rutina/rutina.page').then((m) => m.RutinaPage) },
       { path: 'sesion/:id', loadComponent: () => import('./sesion/sesion.page').then((m) => m.SesionPage) },
+      { path: 'cuenta', loadComponent: () => import('./cuenta/mi-cuenta.page').then((m) => m.MiCuentaPage) },
       { path: 'patrones', loadComponent: () => import('./patrones/patrones.page').then((m) => m.PatronesPage) },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     ],

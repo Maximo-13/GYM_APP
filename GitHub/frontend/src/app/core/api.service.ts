@@ -26,6 +26,14 @@ export class ApiService {
     return this.pedir<T>('POST', ruta, cuerpo, token);
   }
 
+  put<T>(ruta: string, cuerpo: unknown, token?: string): Promise<T> {
+    return this.pedir<T>('PUT', ruta, cuerpo, token);
+  }
+
+  delete<T = void>(ruta: string, token?: string): Promise<T> {
+    return this.pedir<T>('DELETE', ruta, undefined, token);
+  }
+
   private async pedir<T>(metodo: string, ruta: string, cuerpo?: unknown, token?: string): Promise<T> {
     const headers: Record<string, string> = { Accept: 'application/json' };
     if (cuerpo !== undefined) headers['Content-Type'] = 'application/json';

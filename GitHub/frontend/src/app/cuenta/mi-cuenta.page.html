@@ -1,0 +1,102 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  @if (usuario(); as u) {
+  <main class="mi-cuenta">
+    <p class="correo">{{ u.email }} @if (u.vinculadoGoogle) { · vinculada con Google }</p>
+
+    <form (ngSubmit)="guardar()" class="formulario">
+      <ion-input
+        label="Nombre"
+        labelPlacement="stacked"
+        fill="outline"
+        maxlength="100"
+        name="nombre"
+        [(ngModel)]="nombre"
+      ></ion-input>
+
+      <div class="campo">
+        <span class="etiqueta" id="etq-nivel">Nivel</span>
+        <div class="nivel" role="radiogroup" aria-labelledby="etq-nivel">
+          @for (n of niveles; track n.valor) {
+          <button
+            type="button"
+            role="radio"
+            [attr.aria-checked]="nivel === n.valor"
+            [class.activo]="nivel === n.valor"
+            (click)="nivel = n.valor"
+          >
+            {{ n.texto }}
+          </button>
+          }
+        </div>
+      </div>
+
+      <ion-input
+        label="Peso corporal (kg)"
+        labelPlacement="stacked"
+        fill="outline"
+        inputmode="decimal"
+        placeholder="Opcional"
+        name="peso"
+        [(ngModel)]="peso"
+      ></ion-input>
+
+      <ion-select
+        label="Objetivo"
+        labelPlacement="stacked"
+        fill="outline"
+        interface="popover"
+        placeholder="Opcional"
+        name="objetivo"
+        [(ngModel)]="objetivo"
+      >
+        <ion-select-option [value]="null">Sin indicar</ion-select-option>
+        @for (o of objetivos; track o) {
+        <ion-select-option [value]="o">{{ o }}</ion-select-option>
+        }
+      </ion-select>
+
+      <ion-select
+        label="Días de entrenamiento por semana"
+        labelPlacement="stacked"
+        fill="outline"
+        interface="popover"
+        placeholder="Opcional"
+        name="dias"
+        [(ngModel)]="diasPorSemana"
+      >
+        <ion-select-option [value]="null">Sin indicar</ion-select-option>
+        @for (d of dias; track d) {
+        <ion-select-option [value]="d">{{ d }}</ion-select-option>
+        }
+      </ion-select>
+
+      @if (mensaje(); as m) {
+      <p class="mensaje" [class]="m.tipo" role="status">{{ m.texto }}</p>
+      }
+
+      <ion-button type="submit" expand="block" [disabled]="guardando()">
+        @if (guardando()) {
+        <ion-spinner name="crescent"></ion-spinner>
+        } @else { Guardar cambios }
+      </ion-button>
+    </form>
+
+    <section class="otras">
+      @if (googleDisponible && !u.vinculadoGoogle) {
+      <ion-button expand="block" fill="outline" (click)="vincularGoogle()">Vincular con Google</ion-button>
+      }
+      <ion-button expand="block" fill="outline" (click)="cerrarSesion()">Cerrar sesión</ion-button>
+      <ion-button expand="block" fill="clear" color="danger" (click)="borrarCuenta()">Borrar mi cuenta</ion-button>
+    </section>
+  </main>
+  }
+</ion-content>

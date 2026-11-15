@@ -5,13 +5,16 @@ import { type GoogleLoginResponseOnline, SocialLogin } from '@capgo/capacitor-so
 import { environment } from '../../environments/environment';
 
 import { ApiService, ErrorApi } from './api.service';
-import { type Nivel, PerfilService } from './perfil.service';
+import { type DatosPerfil, type Nivel, PerfilService } from './perfil.service';
 
 export interface UsuarioServidor {
   id: string;
   nombre: string;
   email: string;
   nivel: Nivel;
+  pesoCorporalKg: number | null;
+  objetivo: string | null;
+  diasPorSemana: number | null;
   tienePassword: boolean;
   vinculadoGoogle: boolean;
 }
@@ -31,6 +34,8 @@ export interface DatosRegistro {
 
 const CLAVE_TOKEN = 'sesion.token';
 const CLAVE_USUARIO = 'sesion.usuario';
+/** Cambios del perfil hechos sin internet, pendientes de enviar al servidor. */
+const CLAVE_PERFIL_PENDIENTE = 'sesion.perfilPendiente';
 
 /**
  * Sesión de la cuenta (RF-01). El token se guarda en el almacenamiento de la app,
@@ -54,6 +59,8 @@ export class CuentaService {
       this.token = (await Preferences.get({ key: CLAVE_TOKEN })).value;
       const guardado = (await Preferences.get({ key: CLAVE_USUARIO })).value;
       this.usuario.set(this.token && guardado ? (JSON.parse(guardado) as UsuarioServidor) : null);
+      // Si quedaron cambios sin enviar, se intenta en segundo plano.
+      void this.enviarPerfilPendiente().catch(() => undefined);
     })();
     return this.cargada;
   }
@@ -94,24 +101,70 @@ export class CuentaService {
     await Preferences.set({ key: CLAVE_USUARIO, value: JSON.stringify(usuario) });
   }
 
+  /**
+   * Guarda el perfil primero en el teléfono (funciona sin internet) y luego lo
+   * envía al servidor. Si no hay conexión, queda pendiente y se envía más tarde.
+   * Devuelve true si ya quedó guardado también en el servidor.
+   */
+  async guardarPerfil(datos: DatosPerfil): Promise<boolean> {
+    const actual = this.usuario();
+    if (!actual) throw new ErrorApi(401, 'No hay sesión iniciada');
+    const usuario: UsuarioServidor = { ...actual, ...datos };
+    this.usuario.set(usuario);
+    await Preferences.set({ key: CLAVE_USUARIO, value: JSON.stringify(usuario) });
+    await this.perfil.establecer({ id: usuario.id, email: usuario.email, ...datos });
+    await Preferences.set({ key: CLAVE_PERFIL_PENDIENTE, value: JSON.stringify(datos) });
+    return this.enviarPerfilPendiente();
+  }
+
+  /** Envía al servidor el perfil pendiente, si lo hay. Sin conexión no falla: lo deja para luego. */
+  async enviarPerfilPendiente(): Promise<boolean> {
+    const pendiente = (await Preferences.get({ key: CLAVE_PERFIL_PENDIENTE })).value;
+    if (!pendiente || !this.token) return !pendiente;
+    try {
+      const usuario = await this.api.put<UsuarioServidor>('/api/cuenta/perfil', JSON.parse(pendiente), this.token);
+      await Preferences.remove({ key: CLAVE_PERFIL_PENDIENTE });
+      this.usuario.set(usuario);
+      await Preferences.set({ key: CLAVE_USUARIO, value: JSON.stringify(usuario) });
+      return true;
+    } catch (e) {
+      if (e instanceof ErrorApi && e.status === 0) return false; // sin conexión: se reintenta luego
+      await Preferences.remove({ key: CLAVE_PERFIL_PENDIENTE });
+      throw e;
+    }
+  }
+
+  /** Borra la cuenta en el servidor y todos sus datos del teléfono (RNF-07). Requiere internet. */
+  async borrarCuenta(): Promise<void> {
+    const id = this.usuario()?.id;
+    if (!this.token || !id) return;
+    await this.api.delete('/api/cuenta', this.token);
+    await this.perfil.borrarDatosLocales(id);
+    await this.cerrarSesion();
+  }
+
   async cerrarSesion(): Promise<void> {
     if (this.googleDisponible && this.usuario()?.vinculadoGoogle) {
       await SocialLogin.logout({ provider: 'google' }).catch(() => undefined);
     }
     await Preferences.remove({ key: CLAVE_TOKEN });
     await Preferences.remove({ key: CLAVE_USUARIO });
+    await Preferences.remove({ key: CLAVE_PERFIL_PENDIENTE });
     this.token = null;
     this.usuario.set(null);
     await this.perfil.olvidarActual();
   }
 
   private async guardarSesion(res: RespuestaAuth): Promise<void> {
+    const idAnterior = await this.perfil.idLocalPrevio();
     this.token = res.token;
     this.usuario.set(res.usuario);
     await Preferences.set({ key: CLAVE_TOKEN, value: res.token });
     await Preferences.set({ key: CLAVE_USUARIO, value: JSON.stringify(res.usuario) });
-    const { id, nombre, email, nivel } = res.usuario;
-    await this.perfil.establecer({ id, nombre, email, nivel });
+    const { id, nombre, email, nivel, pesoCorporalKg, objetivo, diasPorSemana } = res.usuario;
+    await this.perfil.establecer({ id, nombre, email, nivel, pesoCorporalKg, objetivo, diasPorSemana });
+    // Lo registrado en el teléfono antes de tener cuenta pasa a esta cuenta.
+    if (idAnterior) await this.perfil.adoptarDatosSinCuenta(idAnterior, id);
   }
 
   private async tokenDeGoogle(): Promise<string> {

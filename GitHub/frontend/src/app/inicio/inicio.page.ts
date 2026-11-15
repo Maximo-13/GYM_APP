@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import {
   IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -32,6 +33,7 @@ import { SesionesService } from '../core/sesiones.service';
     IonTitle,
     IonContent,
     IonButton,
+    IonButtons,
     IonCard,
     IonCardHeader,
     IonCardTitle,

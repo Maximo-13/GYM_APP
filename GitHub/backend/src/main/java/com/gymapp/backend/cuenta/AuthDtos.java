@@ -1,7 +1,15 @@
 package com.gymapp.backend.cuenta;
 
+import java.math.BigDecimal;
+
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
@@ -53,11 +61,34 @@ public final class AuthDtos {
     public record VincularGoogleRequest(@NotBlank(message = "Falta el token de Google") String idToken) {
     }
 
+    /**
+     * Datos editables del perfil (RF-02, RF-03). Se envían todos: un campo opcional
+     * en null significa "sin dato".
+     */
+    public record PerfilRequest(
+            @NotBlank(message = "Escribe tu nombre") @Size(max = 100, message = "El nombre es demasiado largo") String nombre,
+            @NotNull(message = "Elige tu nivel") Nivel nivel,
+            @DecimalMin(value = "20", message = "El peso debe estar entre 20 y 400 kg")
+            @DecimalMax(value = "400", message = "El peso debe estar entre 20 y 400 kg")
+            @Digits(integer = 3, fraction = 2, message = "El peso admite como máximo 2 decimales") BigDecimal pesoCorporalKg,
+            @Size(max = 100, message = "El objetivo es demasiado largo") String objetivo,
+            @Min(value = 1, message = "Los días por semana deben estar entre 1 y 7")
+            @Max(value = 7, message = "Los días por semana deben estar entre 1 y 7") Integer diasPorSemana) {
+
+        public PerfilRequest {
+            nombre = nombre == null ? null : nombre.trim();
+            objetivo = objetivo == null || objetivo.isBlank() ? null : objetivo.trim();
+        }
+    }
+
     public record UsuarioDto(String id, String nombre, String email, Nivel nivel,
+            BigDecimal pesoCorporalKg, String objetivo, Integer diasPorSemana,
             boolean tienePassword, boolean vinculadoGoogle) {
 
         static UsuarioDto de(Usuario u) {
             return new UsuarioDto(u.getId(), u.getNombre(), u.getEmail(), u.getNivel(),
+                    u.getPesoCorporalKg(), u.getObjetivo(),
+                    u.getDiasPorSemana() == null ? null : u.getDiasPorSemana().intValue(),
                     u.getPasswordHash() != null, u.getGoogleSub() != null);
         }
     }

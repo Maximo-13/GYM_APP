@@ -1,5 +1,6 @@
 package com.gymapp.backend.cuenta;
 
+import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.UUID;
@@ -13,6 +14,7 @@ import com.gymapp.backend.comun.ApiException;
 import com.gymapp.backend.cuenta.AuthDtos.AuthResponse;
 import com.gymapp.backend.cuenta.AuthDtos.GoogleRequest;
 import com.gymapp.backend.cuenta.AuthDtos.LoginRequest;
+import com.gymapp.backend.cuenta.AuthDtos.PerfilRequest;
 import com.gymapp.backend.cuenta.AuthDtos.RegistroRequest;
 import com.gymapp.backend.cuenta.AuthDtos.UsuarioDto;
 import com.gymapp.backend.seguridad.GoogleTokenVerifier;
@@ -114,6 +116,24 @@ public class AuthService {
     @Transactional(readOnly = true)
     public UsuarioDto yo(String usuarioId) {
         return UsuarioDto.de(buscar(usuarioId));
+    }
+
+    /** Nombre, nivel y datos opcionales: peso, objetivo y días por semana (RF-02, RF-03). */
+    @Transactional
+    public UsuarioDto actualizarPerfil(String usuarioId, PerfilRequest req) {
+        Usuario u = buscar(usuarioId);
+        u.setNombre(req.nombre());
+        u.setNivel(req.nivel());
+        u.setPesoCorporalKg(req.pesoCorporalKg());
+        u.setObjetivo(req.objetivo());
+        u.setDiasPorSemana(req.diasPorSemana() == null ? null : req.diasPorSemana().byteValue());
+        return UsuarioDto.de(u);
+    }
+
+    /** Borra la cuenta: deja de poder entrar y sus datos personales se eliminan (RNF-07). */
+    @Transactional
+    public void borrar(String usuarioId) {
+        buscar(usuarioId).borrar(LocalDateTime.now());
     }
 
     private Usuario buscar(String usuarioId) {

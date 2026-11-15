@@ -1,38 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start"><ion-back-button defaultHref="/inicio"></ion-back-button></ion-buttons>
-    <ion-title>Cuenta y patrones</ion-title>
+    <ion-title>Patrones articulares</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  @if (usuario(); as u) {
-  <section class="cuenta">
-    <p class="nombre">{{ u.nombre }}</p>
-    <p class="email">{{ u.email }} @if (u.vinculadoGoogle) { · vinculada con Google }</p>
-    @if (mensaje()) {
-    <p class="mensaje" role="status">{{ mensaje() }}</p>
-    }
-    <div class="acciones">
-      @if (googleDisponible && !u.vinculadoGoogle) {
-      <ion-button size="small" fill="outline" (click)="vincularGoogle()">Vincular Google</ion-button>
-      }
-      <ion-button size="small" fill="clear" color="danger" (click)="cerrarSesion()">Cerrar sesión</ion-button>
-    </div>
-  </section>
-  }
-
-  <section class="nivel">
-    <p>Tu nivel</p>
-    <ion-segment [value]="perfil()?.nivel" (ionChange)="cambiarNivel($event.detail.value)">
-      <ion-segment-button value="PRINCIPIANTE"><ion-label>Principiante</ion-label></ion-segment-button>
-      <ion-segment-button value="INTERMEDIO"><ion-label>Intermedio</ion-label></ion-segment-button>
-      <ion-segment-button value="AVANZADO"><ion-label>Avanzado</ion-label></ion-segment-button>
-    </ion-segment>
-  </section>
-
   <section>
-    <h2>Patrones articulares</h2>
     <p class="resumen">{{ patrones().length }} patrones · {{ totalEjercicios() }} ejercicios en el catálogo</p>
 
     <ion-accordion-group>
