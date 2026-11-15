@@ -32,3 +32,32 @@ li {
   font-size: 0.8rem;
   color: var(--ion-color-medium);
 }
+
+.cuenta {
+  margin-bottom: 20px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--ion-color-light);
+
+  p {
+    margin: 0;
+  }
+
+  .nombre {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .email,
+  .mensaje {
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+  }
+
+  .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+}

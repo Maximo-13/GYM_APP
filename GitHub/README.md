@@ -17,6 +17,32 @@ cd backend
 Arranca en http://localhost:8080. Comprobación rápida: http://localhost:8080/actuator/health
 
 No hace falta instalar Maven: `mvnw` (o `mvnw.cmd` en Windows) lo descarga solo.
+Necesita MySQL encendido (XAMPP) con la base `gym_app`; Flyway crea las tablas.
+
+### Cuentas (RF-01)
+
+| Método | Ruta | Qué hace |
+| --- | --- | --- |
+| POST | `/api/auth/registro` | Crear cuenta con nombre, correo, contraseña y nivel |
+| POST | `/api/auth/login` | Iniciar sesión con correo y contraseña |
+| POST | `/api/auth/google` | Entrar o crear cuenta con Google (ID token) |
+| GET | `/api/cuenta` | Datos de la cuenta (requiere `Authorization: Bearer <token>`) |
+| POST | `/api/cuenta/google` | Vincular Google a la cuenta con sesión iniciada |
+
+Las contraseñas se guardan cifradas con BCrypt y la sesión es un JWT de 30 días.
+Variables de entorno para producción: `JWT_SECRET` (mínimo 32 caracteres),
+`GOOGLE_CLIENT_IDS` y `CORS_ORIGENES`.
+
+### Activar el inicio de sesión con Google
+
+1. En [Google Cloud Console](https://console.cloud.google.com/) crea un proyecto y configura
+   la pantalla de consentimiento de OAuth.
+2. En **Credenciales**, crea dos ID de cliente de OAuth:
+   - **Aplicación web** (para el navegador y como "server client" de Android).
+   - **Android**, con el paquete `com.gymapp.registro` y la huella SHA-1 del certificado
+     (para pruebas: `keytool -list -v -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore -storepass android`).
+3. Pon el ID de tipo web en `frontend/src/environments/environment*.ts` (`googleWebClientId`).
+4. Arranca el backend con `GOOGLE_CLIENT_IDS=<id-web>,<id-android>`.
 
 ## Frontend
 
@@ -56,7 +82,9 @@ npm run catalogo
 
 - Base de datos del servidor: MySQL con JPA + Flyway (migraciones V1 a V4).
 - Base SQLite en la app, con el mismo catálogo e IDs que el servidor.
-- Pantalla de bienvenida para elegir el nivel (RF-02).
+- Crear cuenta e iniciar sesión con correo, guardadas en MySQL; sesión que se mantiene al cerrar la app (RF-01).
+- Nivel elegido al crear la cuenta (RF-02).
+- Inicio de sesión y vinculación con Google listos en código; falta crear los ID de cliente en Google Cloud.
 - Rutinas con ejercicios en orden, día y series objetivo (RF-08).
 - Registro de series con peso, reps, RIR y check, editando la sesión en vivo (RF-09, RF-11, RF-13).
 - Comparativa con la última vez: serie anterior, meta, Superado / Mantenido / Por debajo por 1RM estimado y barra de volumen (RF-14 a RF-17).
@@ -66,5 +94,6 @@ npm run catalogo
 
 - Temporizador de descanso (RF-12), historial y gráficas (RF-18), columnas personalizadas (RF-10).
 - Importar y exportar Excel (RF-27, RF-28).
-- Cuenta y login (RF-01) y sincronización con el servidor.
+- Sincronización de rutinas y sesiones con el servidor.
+- Apple (iPhone), más adelante.
 - Textos en archivos de idioma (RNF-13).

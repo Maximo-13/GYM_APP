@@ -1,18 +1,23 @@
 import { inject } from '@angular/core';
 import { type CanActivateFn, Router } from '@angular/router';
 
+import { CuentaService } from './cuenta.service';
 import { PerfilService } from './perfil.service';
 
-/** Sin perfil todavía → pantalla de bienvenida para elegir el nivel. */
-export const conPerfil: CanActivateFn = async () => {
+/** Sin sesión iniciada → pantalla para entrar o crear cuenta. */
+export const conSesion: CanActivateFn = async () => {
   const router = inject(Router);
-  const perfil = await inject(PerfilService).cargar();
-  return perfil ? true : router.parseUrl('/bienvenida');
+  const cuenta = inject(CuentaService);
+  const perfil = inject(PerfilService);
+  if ((await cuenta.haySesion()) && (await perfil.cargar())) return true;
+  return router.parseUrl('/entrar');
 };
 
-/** Con perfil ya creado, la bienvenida no se vuelve a mostrar. */
-export const sinPerfil: CanActivateFn = async () => {
+/** Con la sesión ya iniciada, las pantallas de entrar y crear cuenta llevan al inicio. */
+export const sinSesion: CanActivateFn = async () => {
   const router = inject(Router);
-  const perfil = await inject(PerfilService).cargar();
-  return perfil ? router.parseUrl('/inicio') : true;
+  const cuenta = inject(CuentaService);
+  const perfil = inject(PerfilService);
+  if ((await cuenta.haySesion()) && (await perfil.cargar())) return router.parseUrl('/inicio');
+  return true;
 };

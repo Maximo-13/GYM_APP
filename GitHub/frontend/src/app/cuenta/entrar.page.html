@@ -1,0 +1,53 @@
+<ion-content class="ion-padding">
+  <main class="cuenta">
+    <header>
+      <p class="lema">Si no registras, estás perdiendo el tiempo en tus entrenamientos.</p>
+      <h1>Iniciar sesión</h1>
+    </header>
+
+    <form (ngSubmit)="entrar()" class="formulario">
+      <ion-input
+        label="Correo"
+        labelPlacement="stacked"
+        fill="outline"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        name="email"
+        [(ngModel)]="email"
+      ></ion-input>
+      <ion-input
+        label="Contraseña"
+        labelPlacement="stacked"
+        fill="outline"
+        type="password"
+        autocomplete="current-password"
+        name="password"
+        [(ngModel)]="password"
+      >
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+
+      @if (error()) {
+      <p class="error" role="alert">{{ error() }}</p>
+      }
+
+      <ion-button type="submit" expand="block" size="large" [disabled]="!!cargando()">
+        @if (cargando() === 'correo') {
+        <ion-spinner name="crescent"></ion-spinner>
+        } @else { Entrar }
+      </ion-button>
+    </form>
+
+    @if (googleDisponible) {
+    <div class="separador"><span>o</span></div>
+    <ion-button expand="block" fill="outline" [disabled]="!!cargando()" (click)="google()">
+      @if (cargando() === 'google') {
+      <ion-spinner name="crescent"></ion-spinner>
+      } @else { Continuar con Google }
+    </ion-button>
+    }
+
+    <p class="pie">¿No tienes cuenta? <a routerLink="/crear-cuenta" [replaceUrl]="true">Crear cuenta</a></p>
+  </main>
+</ion-content>

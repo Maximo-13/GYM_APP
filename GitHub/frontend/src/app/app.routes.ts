@@ -1,16 +1,21 @@
 import type { Routes } from '@angular/router';
 
-import { conPerfil, sinPerfil } from './core/perfil.guard';
+import { conSesion, sinSesion } from './core/perfil.guard';
 
 export const routes: Routes = [
   {
-    path: 'bienvenida',
-    canActivate: [sinPerfil],
-    loadComponent: () => import('./bienvenida/bienvenida.page').then((m) => m.BienvenidaPage),
+    path: 'entrar',
+    canActivate: [sinSesion],
+    loadComponent: () => import('./cuenta/entrar.page').then((m) => m.EntrarPage),
+  },
+  {
+    path: 'crear-cuenta',
+    canActivate: [sinSesion],
+    loadComponent: () => import('./cuenta/crear-cuenta.page').then((m) => m.CrearCuentaPage),
   },
   {
     path: '',
-    canActivateChild: [conPerfil],
+    canActivateChild: [conSesion],
     children: [
       { path: 'inicio', loadComponent: () => import('./inicio/inicio.page').then((m) => m.InicioPage) },
       { path: 'rutina/:id', loadComponent: () => import('./rutina/rutina.page').then((m) => m.RutinaPage) },

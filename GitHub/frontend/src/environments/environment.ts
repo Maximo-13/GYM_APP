@@ -1,16 +1,12 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false,
+  /** API cuando la app corre en el navegador (npm start). */
+  apiUrl: 'http://localhost:8080',
+  /**
+   * API cuando la app corre en el teléfono: la IP de la PC en el WiFi (comando ipconfig).
+   * El teléfono debe estar en el mismo WiFi. Cambiará cuando el servidor esté en internet.
+   */
+  apiUrlTelefono: 'http://192.168.18.8:8080',
+  /** Client ID de Google de tipo "Aplicación web" (Google Cloud Console). Vacío = sin Google. */
+  googleWebClientId: '',
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

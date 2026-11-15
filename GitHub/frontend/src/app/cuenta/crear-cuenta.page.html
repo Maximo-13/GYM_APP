@@ -1,0 +1,83 @@
+<ion-content class="ion-padding">
+  <main class="cuenta">
+    <header>
+      <p class="lema">Si no registras, estás perdiendo el tiempo en tus entrenamientos.</p>
+      <h1>Crear cuenta</h1>
+    </header>
+
+    <form (ngSubmit)="crear()" class="formulario">
+      <ion-input
+        label="Nombre"
+        labelPlacement="stacked"
+        fill="outline"
+        autocomplete="name"
+        maxlength="100"
+        name="nombre"
+        [(ngModel)]="nombre"
+      ></ion-input>
+      <ion-input
+        label="Correo"
+        labelPlacement="stacked"
+        fill="outline"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        name="email"
+        [(ngModel)]="email"
+      ></ion-input>
+      <ion-input
+        label="Contraseña"
+        labelPlacement="stacked"
+        fill="outline"
+        type="password"
+        autocomplete="new-password"
+        helperText="Mínimo 8 caracteres"
+        maxlength="72"
+        name="password"
+        [(ngModel)]="password"
+      >
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+
+      <fieldset class="niveles">
+        <legend>¿Cuánto sabes de biomecánica?</legend>
+        <div class="opciones" role="radiogroup" aria-label="Nivel">
+          @for (op of opciones; track op.nivel) {
+          <button
+            type="button"
+            class="opcion"
+            role="radio"
+            [attr.aria-checked]="nivel() === op.nivel"
+            [class.activa]="nivel() === op.nivel"
+            (click)="nivel.set(op.nivel)"
+          >
+            <span class="titulo">{{ op.titulo }}</span>
+            <span class="descripcion">{{ op.descripcion }}</span>
+          </button>
+          }
+        </div>
+      </fieldset>
+
+      @if (error()) {
+      <p class="error" role="alert">{{ error() }}</p>
+      }
+
+      <ion-button type="submit" expand="block" size="large" [disabled]="!!cargando()">
+        @if (cargando() === 'correo') {
+        <ion-spinner name="crescent"></ion-spinner>
+        } @else { Crear cuenta }
+      </ion-button>
+    </form>
+
+    @if (googleDisponible) {
+    <div class="separador"><span>o</span></div>
+    <ion-button expand="block" fill="outline" [disabled]="!!cargando()" (click)="google()">
+      @if (cargando() === 'google') {
+      <ion-spinner name="crescent"></ion-spinner>
+      } @else { Continuar con Google }
+    </ion-button>
+    }
+
+    <p class="pie">¿Ya tienes cuenta? <a routerLink="/entrar" [replaceUrl]="true">Iniciar sesión</a></p>
+  </main>
+</ion-content>
